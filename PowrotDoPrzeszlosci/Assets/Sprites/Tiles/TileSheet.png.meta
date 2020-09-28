@@ -19,16 +19,37 @@ TextureImporter:
     second: Ground2
   - first:
       213: -2374047007104820766
-    second: Water1
+    second: Water
   - first:
       213: -3607141215718513491
-    second: Stone1
+    second: Rock1
   - first:
       213: -3032790282715393777
-    second: Stone2
+    second: Rock2
   - first:
       213: 7987534627137561783
-    second: Stone3
+    second: Rock3`
+  - first:
+      213: 1641872027996137565
+    second: TileSheet_9
+  - first:
+      213: 46097893258781529
+    second: TileSheet_10
+  - first:
+      213: -8992702112789220695
+    second: TileSheet_11
+  - first:
+      213: -1681823103513194223
+    second: TileSheet_12
+  - first:
+      213: -2932742098559850692
+    second: TileSheet_13
+  - first:
+      213: 1738467299532483907
+    second: TileSheet_14
+  - first:
+      213: -3204162399642744818
+    second: TileSheet_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -233,7 +254,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Water1
+      name: Water
       rect:
         serializedVersion: 2
         x: 300
@@ -254,7 +275,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stone1
+      name: Rock1
       rect:
         serializedVersion: 2
         x: 0
@@ -275,7 +296,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stone2
+      name: Rock2
       rect:
         serializedVersion: 2
         x: 150
@@ -296,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stone3
+      name: Rock3`
       rect:
         serializedVersion: 2
         x: 300
