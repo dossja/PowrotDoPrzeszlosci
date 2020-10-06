@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        transform.localScale = new Vector3(-1, 1, 1);
         actions = new PlayerActions(this);
         utilities = new PlayerUtilities(this);
         stats.Speed = stats.RunSpeed;
