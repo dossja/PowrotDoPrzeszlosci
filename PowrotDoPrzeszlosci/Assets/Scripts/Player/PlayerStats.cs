@@ -9,6 +9,10 @@ public class PlayerStats
 
     public float Speed { get; set; }
     public float RunSpeed { get => runSpeed; }
+    public float JumpForce { get => jumpForce; }
+
+    [SerializeField]
+    private float jumpForce;
 
     [SerializeField]
     private float runSpeed;

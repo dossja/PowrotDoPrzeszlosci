@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
     public PlayerComponents Components { get => components; }
     public PlayerStats Stats { get => stats; }
+    public PlayerActions Actions { get => actions; }
 
     // Start is called before the first frame update
     private void Start()
