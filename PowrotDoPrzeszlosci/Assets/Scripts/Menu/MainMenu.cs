@@ -11,12 +11,6 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    // Continue game ->  Load level with saved ID
-    public void ContinueGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
     public void ExitGame()
     {
         Debug.Log("Wyjscie z gry!");
