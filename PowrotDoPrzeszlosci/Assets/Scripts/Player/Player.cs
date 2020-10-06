@@ -25,11 +25,8 @@ public class Player : MonoBehaviour
 
         AnyStateAnimation[] stateAnimations = new AnyStateAnimation[]
         {
-            new AnyStateAnimation(RIG.BODY, "Body_Idle"),
-            new AnyStateAnimation(RIG.BODY, "Body_Run"),
-
-            new AnyStateAnimation(RIG.LEGS, "Legs_Idle"),
-            new AnyStateAnimation(RIG.LEGS, "Legs_Run"),
+            new AnyStateAnimation(RIG.BODY, "Idle"),
+            new AnyStateAnimation(RIG.BODY, "Run"),
         };
 
         components.Animator.AddAnimations(stateAnimations);

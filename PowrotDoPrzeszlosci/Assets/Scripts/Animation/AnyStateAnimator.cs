@@ -31,9 +31,6 @@ public class AnyStateAnimator : MonoBehaviour
             case RIG.BODY:
                 PlayAnimation(ref currentAnimationBody);
                 break;
-            case RIG.LEGS:
-                PlayAnimation(ref currentAnimationLegs);
-                break;
         }
 
         void PlayAnimation(ref string currentAnimation)
