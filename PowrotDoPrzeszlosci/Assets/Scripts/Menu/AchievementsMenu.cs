@@ -8,6 +8,7 @@ public class AchievementsMenu : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI pointsText;
+
     [SerializeField]
     private int numberOfQuestions = 5;
 

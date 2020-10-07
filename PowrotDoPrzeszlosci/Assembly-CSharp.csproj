@@ -106,6 +106,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Quiz\AnswerData.cs" />
+    <Compile Include="Assets\Scripts\Quiz\QuestionData.cs" />
+    <Compile Include="Assets\Scripts\Quiz\AnswerButton.cs" />
+    <Compile Include="Assets\Scripts\Quiz\QuestionText.cs" />
+    <Compile Include="Assets\Scripts\Quiz\QuizController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
