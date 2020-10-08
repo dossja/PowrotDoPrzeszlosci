@@ -14,6 +14,8 @@ public class AnswerButton : MonoBehaviour
 
     private AnswerData answerData;
 
+    public QuestionData questionData;
+
     public void Setup(AnswerData data)
     {
         answerData = data;
@@ -33,6 +35,11 @@ public class AnswerButton : MonoBehaviour
             colorBlock.color = new Color(1.0f, 0.0f, 0.0f, 0.3f);
         }
 
-        //Script for stopping
+        questionData.DisableButtons();
     }
+
+    public void DisableButton()
+    {
+        button.interactable = false;
+    }    
 }
