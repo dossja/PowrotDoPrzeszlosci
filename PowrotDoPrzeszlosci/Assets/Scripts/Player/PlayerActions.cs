@@ -28,6 +28,10 @@ public class PlayerActions
 
     public void Jump()
     {
-        player.Components.Rigidbody.AddForce(new Vector2(0, player.Stats.JumpForce), ForceMode2D.Impulse);
+        if (player.Utilities.IsGrounded())
+        {
+            player.Components.Rigidbody.AddForce(new Vector2(0, player.Stats.JumpForce), ForceMode2D.Impulse);
+            player.Components.Animator.TryPlayAnimation("Jump");
+        }
     }
 }

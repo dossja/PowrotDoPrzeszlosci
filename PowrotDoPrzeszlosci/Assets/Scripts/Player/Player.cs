@@ -9,25 +9,32 @@ public class Player : MonoBehaviour
     [SerializeField]
     private PlayerComponents components;
     private PlayerReferences references;
+    [SerializeField]
     private PlayerUtilities utilities;
     private PlayerActions actions;
+
+    [SerializeField]
+    private Joystick joystick;
 
     public PlayerComponents Components { get => components; }
     public PlayerStats Stats { get => stats; }
     public PlayerActions Actions { get => actions; }
+    public PlayerUtilities Utilities { get => utilities; }
 
     // Start is called before the first frame update
     private void Start()
     {
         transform.localScale = new Vector3(-1, 1, 1);
         actions = new PlayerActions(this);
-        utilities = new PlayerUtilities(this);
+        utilities = new PlayerUtilities(this, joystick);
         stats.Speed = stats.RunSpeed;
 
         AnyStateAnimation[] stateAnimations = new AnyStateAnimation[]
         {
             new AnyStateAnimation(RIG.BODY, "Idle"),
             new AnyStateAnimation(RIG.BODY, "Run"),
+            new AnyStateAnimation(RIG.BODY, "Jump"),
+            new AnyStateAnimation(RIG.BODY, "Fall"),
         };
 
         components.Animator.AddAnimations(stateAnimations);
@@ -36,7 +43,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        utilities.HandleInput();
+        Utilities.HandleInput();
+        utilities.HandleAir();
     }
 
     private void FixedUpdate()
