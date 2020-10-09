@@ -9,23 +9,26 @@ public class AnswerButton : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI answerText;
 
+    private string correctAnswer;
+
     [SerializeField]
     private Button button;
 
-    private AnswerData answerData;
 
     public QuestionData questionData;
+    public int questionId;
 
-    public void Setup(AnswerData data)
+    public void Setup(string answer, string correctAnswer, int id)
     {
-        answerData = data;
-        answerText.text = answerData.answerText;
+        answerText.text = answer;
+        this.correctAnswer = correctAnswer;
+        questionId = id;
     }
 
     public void CheckingValidity()
     {
         Image colorBlock = button.GetComponent<Image>();
-        if (answerData.isCorrect)
+        if (correctAnswer == answerText.text)
         {
             colorBlock.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
             //Adding points
@@ -36,6 +39,7 @@ public class AnswerButton : MonoBehaviour
         }
 
         questionData.DisableButtons();
+        questionData.PlayerAnswered(questionId, answerText.text);
     }
 
     public void DisableButton()

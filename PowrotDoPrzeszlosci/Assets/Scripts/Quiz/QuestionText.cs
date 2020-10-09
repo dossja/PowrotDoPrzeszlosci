@@ -8,9 +8,19 @@ public class QuestionText : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI questionText;
 
-
-    public void Setup(string data)
+    public void Setup(int id)
     {
-        questionText.text = data;
+        if (id == 0)
+            questionText.text = "W którym roku odbył się chrzest Polski?";
+        else if (id == 1)
+            questionText.text = "W którym roku odbył się zjazd Gnieźnieński?";
+        else if (id == 2)
+            questionText.text = "W którym roku zmarł Bolesław Krzywousty?";
+        else if (id == 3)
+            questionText.text = "W którym roku sprowadzono krzyżaków do Polski?";
+        else if (id == 4)
+            questionText.text = "W którym roku odbyła się bitwa pod Płowcami?";
+        else if (id == 5)
+            questionText.text = "W którym roku odbyła się bitwa pod Grunwaldem?";
     }
 }

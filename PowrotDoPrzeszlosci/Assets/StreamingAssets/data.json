@@ -1,0 +1,64 @@
+{
+    "Items": [
+        {
+            "id": "0",
+            "question": "W kt�rym roku odby� si� chrzest Polski?",
+            "playerAnswer": "966",
+            "answer1": "1007",
+            "answer2": "997",
+            "answer3": "966",
+            "answer4": "1008",
+            "correctAnswer": "966"
+        },
+        {
+            "id": "1",
+            "question": "W kt�rym roku odby� si� zjazd Gnie�nie�ski?",
+            "playerAnswer": "none",
+            "answer1": "1000",
+            "answer2": "997",
+            "answer3": "1004",
+            "answer4": "1001",
+            "correctAnswer": "1000"
+        },
+        {
+            "id": "2",
+            "question": "W kt�rym roku zmar� Boles�aw Krzywousty?",
+            "playerAnswer": "none",
+            "answer1": "1137",
+            "answer2": "1138",
+            "answer3": "1179",
+            "answer4": "1148",
+            "correctAnswer": "1138"
+        },
+        {
+            "id": "3",
+            "question": "W kt�rym roku sprowadzono krzy�ak�w do Polski?",
+            "playerAnswer": "none",
+            "answer1": "1226",
+            "answer2": "1236",
+            "answer3": "1230",
+            "answer4": "1190",
+            "correctAnswer": "1226"
+        },
+        {
+            "id": "4",
+            "question": "W kt�rym roku odby�a si� bitwa pod P�owcami?",
+            "playerAnswer": "none",
+            "answer1": "1307",
+            "answer2": "1331",
+            "answer3": "1278",
+            "answer4": "1328",
+            "correctAnswer": "1331"
+        },
+        {
+            "id": "5",
+            "question": "W kt�rym roku odby�a si� bitwa pod Grunwaldem?",
+            "playerAnswer": "none",
+            "answer1": "1410",
+            "answer2": "1412",
+            "answer3": "1510",
+            "answer4": "1389",
+            "correctAnswer": "1410"
+        }
+    ]
+}
