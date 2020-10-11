@@ -37,11 +37,6 @@ public class QuestionData: MonoBehaviour
         SetupQuestion(questionId);
     }
 
-    public void SetupQuestionMenu(int id)
-    {
-        //Different setup
-    }
-
     public void SetupQuestion(int id)
     {
         questionData = questionGameData[id];

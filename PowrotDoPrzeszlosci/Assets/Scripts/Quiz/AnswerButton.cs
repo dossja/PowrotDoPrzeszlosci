@@ -31,7 +31,6 @@ public class AnswerButton : MonoBehaviour
         if (correctAnswer == answerText.text)
         {
             colorBlock.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
-            //Adding points
         }
         else
         {

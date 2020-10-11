@@ -1,17 +1,19 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - AchievementsMenu
-    - AnswerButton
+    - AchievementsQuestion
+    - AnswerText
     - AnyStateAnimator
-    - CloseQuiz
+    - EnableQuestionsData
+    - FixedJoystick
     - LevelMenu
+    - LoadPauseMenu
     - MainMenu
     - OptionsMenu
     - Parallax
+    - PauseMenu
     - Player
     - PlayerAnimation
-    - QuestionData
     - QuestionText
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -135,88 +137,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 742}
     - Class: 114
-      Script: {instanceID: 12234}
-    - Class: 114
-      Script: {instanceID: 12864}
-    - Class: 114
-      Script: {instanceID: 13262}
-    - Class: 114
-      Script: {instanceID: 13596}
-    - Class: 114
-      Script: {instanceID: 13694}
-    - Class: 114
-      Script: {instanceID: 15182}
-    - Class: 114
-      Script: {instanceID: 16848}
-    - Class: 114
-      Script: {instanceID: 17004}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 258
-      Script: {instanceID: 0}
-    - Class: 19719996
-      Script: {instanceID: 0}
-    - Class: 156049354
-      Script: {instanceID: 0}
-    - Class: 483693784
-      Script: {instanceID: 0}
-    - Class: 1839735485
-      Script: {instanceID: 0}
-    Assets/Scenes/MainMenu.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
       Script: {instanceID: 11944}
     - Class: 114
-      Script: {instanceID: 11952}
+      Script: {instanceID: 11946}
     - Class: 114
-      Script: {instanceID: 12130}
+      Script: {instanceID: 11948}
     - Class: 114
-      Script: {instanceID: 12556}
+      Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 13262}
+      Script: {instanceID: 11958}
     - Class: 114
-      Script: {instanceID: 13596}
+      Script: {instanceID: 12138}
     - Class: 114
-      Script: {instanceID: 14536}
+      Script: {instanceID: 12242}
     - Class: 114
-      Script: {instanceID: 14764}
+      Script: {instanceID: 12300}
     - Class: 114
-      Script: {instanceID: 15282}
+      Script: {instanceID: 12872}
     - Class: 114
-      Script: {instanceID: 15406}
+      Script: {instanceID: 13272}
     - Class: 114
-      Script: {instanceID: 15546}
+      Script: {instanceID: 13608}
     - Class: 114
-      Script: {instanceID: 15812}
+      Script: {instanceID: 13706}
     - Class: 114
-      Script: {instanceID: 16742}
+      Script: {instanceID: 15198}
     - Class: 114
-      Script: {instanceID: 17004}
+      Script: {instanceID: 15298}
     - Class: 114
-      Script: {instanceID: 17072}
+      Script: {instanceID: 15444}
+    - Class: 114
+      Script: {instanceID: 15834}
+    - Class: 114
+      Script: {instanceID: 16764}
+    - Class: 114
+      Script: {instanceID: 16872}
+    - Class: 114
+      Script: {instanceID: 17030}
+    - Class: 114
+      Script: {instanceID: 17184}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -224,6 +183,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -239,7 +200,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 245
       Script: {instanceID: 0}
-    Assets/Scenes/QuizScene.unity:
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 19719996
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
+      Script: {instanceID: 0}
+    Assets/Scenes/MainMenu.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -273,93 +244,101 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11952}
     - Class: 114
-      Script: {instanceID: 12144}
+      Script: {instanceID: 11954}
     - Class: 114
-      Script: {instanceID: 12302}
+      Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 12332}
+      Script: {instanceID: 11958}
     - Class: 114
-      Script: {instanceID: 12556}
+      Script: {instanceID: 12138}
     - Class: 114
-      Script: {instanceID: 12624}
+      Script: {instanceID: 12152}
     - Class: 114
-      Script: {instanceID: 12818}
+      Script: {instanceID: 12312}
     - Class: 114
-      Script: {instanceID: 12850}
+      Script: {instanceID: 12342}
     - Class: 114
-      Script: {instanceID: 13262}
+      Script: {instanceID: 12632}
     - Class: 114
-      Script: {instanceID: 13322}
+      Script: {instanceID: 12858}
     - Class: 114
-      Script: {instanceID: 13424}
+      Script: {instanceID: 13272}
     - Class: 114
-      Script: {instanceID: 13596}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13600}
+      Script: {instanceID: 13436}
     - Class: 114
-      Script: {instanceID: 13688}
+      Script: {instanceID: 13608}
     - Class: 114
-      Script: {instanceID: 13764}
+      Script: {instanceID: 13612}
     - Class: 114
-      Script: {instanceID: 14066}
+      Script: {instanceID: 13700}
     - Class: 114
-      Script: {instanceID: 14116}
+      Script: {instanceID: 13776}
     - Class: 114
-      Script: {instanceID: 14204}
+      Script: {instanceID: 14080}
     - Class: 114
-      Script: {instanceID: 14364}
+      Script: {instanceID: 14130}
     - Class: 114
-      Script: {instanceID: 14764}
+      Script: {instanceID: 14218}
     - Class: 114
-      Script: {instanceID: 14800}
+      Script: {instanceID: 14378}
     - Class: 114
-      Script: {instanceID: 15190}
+      Script: {instanceID: 14814}
     - Class: 114
-      Script: {instanceID: 15278}
+      Script: {instanceID: 15206}
     - Class: 114
-      Script: {instanceID: 15282}
+      Script: {instanceID: 15294}
     - Class: 114
-      Script: {instanceID: 15302}
+      Script: {instanceID: 15298}
     - Class: 114
-      Script: {instanceID: 15312}
+      Script: {instanceID: 15318}
     - Class: 114
-      Script: {instanceID: 15466}
+      Script: {instanceID: 15328}
     - Class: 114
-      Script: {instanceID: 15520}
+      Script: {instanceID: 15424}
     - Class: 114
-      Script: {instanceID: 15532}
+      Script: {instanceID: 15486}
     - Class: 114
-      Script: {instanceID: 15812}
+      Script: {instanceID: 15540}
     - Class: 114
-      Script: {instanceID: 15874}
+      Script: {instanceID: 15552}
     - Class: 114
-      Script: {instanceID: 15952}
+      Script: {instanceID: 15566}
     - Class: 114
-      Script: {instanceID: 16050}
+      Script: {instanceID: 15834}
     - Class: 114
-      Script: {instanceID: 16388}
+      Script: {instanceID: 15974}
     - Class: 114
-      Script: {instanceID: 16456}
+      Script: {instanceID: 16074}
     - Class: 114
-      Script: {instanceID: 16634}
+      Script: {instanceID: 16412}
     - Class: 114
-      Script: {instanceID: 16690}
+      Script: {instanceID: 16478}
     - Class: 114
-      Script: {instanceID: 16742}
+      Script: {instanceID: 16656}
     - Class: 114
-      Script: {instanceID: 16954}
+      Script: {instanceID: 16712}
     - Class: 114
-      Script: {instanceID: 16958}
+      Script: {instanceID: 16764}
     - Class: 114
-      Script: {instanceID: 17004}
+      Script: {instanceID: 16978}
     - Class: 114
-      Script: {instanceID: 17032}
+      Script: {instanceID: 16982}
     - Class: 114
-      Script: {instanceID: 17094}
+      Script: {instanceID: 17030}
     - Class: 114
-      Script: {instanceID: 17196}
+      Script: {instanceID: 17058}
     - Class: 114
-      Script: {instanceID: 17204}
+      Script: {instanceID: 17222}
+    - Class: 114
+      Script: {instanceID: 17230}
+    - Class: 114
+      Script: {instanceID: 27436}
+    - Class: 114
+      Script: {instanceID: 44716}
+    - Class: 114
+      Script: {instanceID: 51042}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -376,6 +355,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
   scriptHashData:
   - hash:
       serializedVersion: 2
@@ -389,6 +374,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ContentSizeFitter
+  - hash:
+      serializedVersion: 2
+      Hash: f087c23fbfa15475a0d110af46fb0496
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: 0c05f2bfb402def3f0a85a62a2323c7f
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Slider
   - hash:
       serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
@@ -415,10 +412,22 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: a6e561615949734e9f12f9b61661f43e
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
+  - hash:
+      serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Joystick
   - hash:
       serializedVersion: 2
       Hash: f40fedccd4adbc76605bea6d67537e4b
@@ -473,6 +482,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayerQuitHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadPauseMenu
   - hash:
       serializedVersion: 2
       Hash: 9ac327467393cb6c8045a2fd90ff67e2
@@ -535,12 +550,6 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: a6e561615949734e9f12f9b61661f43e
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
-  - hash:
-      serializedVersion: 2
       Hash: 95e6797232b7d5831c9feb55a8582905
     assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
     namespaceName: UnityEngine.Rendering.Universal
@@ -595,7 +604,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: f7712398a3186046551f7a3fc73ef27c
+      Hash: 3bee71c3cc7d563607cfab97ed332dda
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AnswerButton
@@ -617,6 +626,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Parallax
+  - hash:
+      serializedVersion: 2
+      Hash: 9e27f44bbf48228f203a37254d40f8ae
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JoystickSetterExample
   - hash:
       serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
@@ -769,7 +784,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: e6f7a8d39baf8ad54ddf5ce51148e0b8
+      Hash: 45e0d00d4ba922ce6569bfae7152d382
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -815,6 +830,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
     namespaceName: UnityEngine.Rendering.Universal
     className: UniversalRenderPipelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloatingJoystick
   - hash:
       serializedVersion: 2
       Hash: 5e1eefcd5106de6c2e85908a3b2d3f04
@@ -877,12 +898,6 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 4d0efdb647732282409ccc15890f8839
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AchievementsMenu
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -905,12 +920,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChatController
-  - hash:
-      serializedVersion: 2
-      Hash: f087c23fbfa15475a0d110af46fb0496
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: 0c9920fb850aff7b5ec756815b7a6fc1
@@ -1063,6 +1072,12 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_A
   - hash:
       serializedVersion: 2
+      Hash: 824e8d4cb47ffd88ddf959dbd4526585
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DynamicJoystick
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1073,6 +1088,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering
     className: VolumeComponent
+  - hash:
+      serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FixedJoystick
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
@@ -1193,6 +1214,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering.UI
     className: DebugUIHandlerVector2
+  - hash:
+      serializedVersion: 2
+      Hash: 528e9858840cb8370d93939fff6b42d9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JoystickPlayerExample
   - hash:
       serializedVersion: 2
       Hash: 8a874a8207a7664bdf44e61f28717254
@@ -1441,6 +1468,12 @@ ScriptsOnlyBuild:
     className: FreeCamera
   - hash:
       serializedVersion: 2
+      Hash: 9dac16f3efc511835ac976dfae55f580
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VariableJoystick
+  - hash:
+      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -1459,13 +1492,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 0c05f2bfb402def3f0a85a62a2323c7f
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Slider
-  - hash:
-      serializedVersion: 2
-      Hash: ae70e969ec289e8697725d274dad9afc
+      Hash: 1c63552b4eabf1de03cbf0dc2d8dc40c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: QuestionData
@@ -1517,9 +1544,26 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 992aa1f4d0804021601ff0b316b15c8a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AchievementsQuestion
+  - hash:
+      serializedVersion: 2
+      Hash: 3c356daa42ca174224070fb105d65373
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnswerText
+  - hash:
+      serializedVersion: 2
+      Hash: cebf99c6c04bf09e6b00da634863e587
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnableQuestionsData
   platform: 13
   scenePathNames:
-  - Assets/Scenes/QuizScene.unity
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Level1.unity
   playerPath: D:/Pliki pulpit/Projekty/Inzynierka/Build/PowrotDoPrzeszlosci.apk
