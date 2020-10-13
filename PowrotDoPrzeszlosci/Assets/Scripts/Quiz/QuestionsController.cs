@@ -2,27 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Globalization;
 
 public class QuestionsController : MonoBehaviour
 {
+    QuestionsStructure questionsStructure;
     public string url;
-    // Start is called before the first frame update
-    void Start()
+    string filePath;
+
+    void Awake()
     {
-        StartCoroutine(getJsonData());
+        filePath = Path.Combine(Application.persistentDataPath, "data.json");
+        GetDataFileJson();
+        Debug.Log(GetData());
     }
 
-    private void processJsonData(string _url)
+    public QuestionsStructure GetData()
     {
-        QuestionsStructure questionsStructure = JsonUtility.FromJson<QuestionsStructure>(_url);
+        /*Debug.Log(questionsStructure);*/
+        return questionsStructure;
+    }
 
-        foreach (Question i in questionsStructure.Questions)
+    private void GetDataFileJson()
+    {
+        if(File.Exists(filePath))
         {
-            Debug.Log(i.id);
+            ReadDataFile();
         }
+        else
+        {
+            StartCoroutine(getJsonData());
+        }
+    }
 
-        string output = JsonUtility.ToJson(questionsStructure);
-        SaveData(output);
+    private void ReadDataFile()
+    {
+        using (StreamReader reader = new StreamReader(filePath))
+        {
+            string json = reader.ReadToEnd();
+
+            processJsonData(json);
+        }
+    }
+
+    private void processJsonData(string data)
+    {
+        questionsStructure = JsonUtility.FromJson<QuestionsStructure>(data);
     }
 
     IEnumerator getJsonData()
@@ -33,16 +58,22 @@ public class QuestionsController : MonoBehaviour
 
         if (_www.error == null)
         {
+            SaveDataJson(_www.text);
             processJsonData(_www.text);
         }
         else
             Debug.LogError("Error in getJsonData");
     }
 
-    public void SaveData(string dataToSave)
+    public void SaveData(QuestionsStructure data)
     {
-        string filePath = Path.Combine(Application.persistentDataPath, "data.json");
+        string dataToSave = JsonUtility.ToJson(data);
 
+        SaveDataJson(dataToSave);
+    }
+
+    private void SaveDataJson(string dataToSave)
+    {
         File.WriteAllText(filePath, dataToSave);
     }
 }

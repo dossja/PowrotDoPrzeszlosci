@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System;
 
-[System.Serializable]
+[Serializable]
 public class QuestionData: MonoBehaviour
 {
     public string questionText;
 
-    private QuestionGameData[] questionGameData;
-    private QuestionGameData questionData;
+    [SerializeField]
+    private QuestionsController questionsController;
+    private QuestionsStructure questionsStructure;
+
+    private Question questionData;
 
     [SerializeField]
     private CloseQuiz closeQuiz;
@@ -33,88 +37,42 @@ public class QuestionData: MonoBehaviour
 
     private void Start()
     {
-        LoadData();
-        SaveDataa();
+        questionsStructure = questionsController.GetData();
         SetupQuestion(questionId);
     }
 
     public void SetupQuestion(int id)
     {
-        questionData = questionGameData[id];
-        answer1.Setup(questionData.answer1, questionData.correctAnswer, id);
-        answer2.Setup(questionData.answer2, questionData.correctAnswer, id);
-        answer3.Setup(questionData.answer3, questionData.correctAnswer, id);
-        answer4.Setup(questionData.answer4, questionData.correctAnswer, id);
+        questionsStructure = questionsController.GetData();
+        Debug.Log(questionsStructure);
+        foreach (Question i in questionsStructure.Questions)
+        {
+            if (i.id == id)
+                questionData = i;
+        }
+
+        Debug.Log(questionData.question);
+
+        answer1.Setup(questionData.answer1, questionData.correctAnswer);
+        answer2.Setup(questionData.answer2, questionData.correctAnswer);
+        answer3.Setup(questionData.answer3, questionData.correctAnswer);
+        answer4.Setup(questionData.answer4, questionData.correctAnswer);
 
         question.Setup(id);
     }
 
-    public void PlayerAnswered(int id, string answer)
+    public void PlayerAnswered(string answer)
     {
-        questionData = questionGameData[id];
+        questionData.playerAnswer = answer;
 
-        questionGameData[id].playerAnswer = answer;
-
-        Debug.Log(questionGameData[id].playerAnswer);
-
-        SaveData();
-    }
-
-    public void LoadData()
-    {
-        string json = ReadFromFile();
-
-        questionGameData = JsonHelper.FromJson<QuestionGameData>(json);
-    }
-
-    private string ReadFromFile()
-    {
-        string filePath = Path.Combine(Application.streamingAssetsPath, "data.json");
-
-        if (File.Exists(filePath))
+        foreach (Question i in questionsStructure.Questions)
         {
-            using (StreamReader reader = new StreamReader(filePath))
-            {
-                string json = reader.ReadToEnd();
-
-                return json;
-            }
+            Debug.Log(i.playerAnswer);
         }
-        else
-        {
-            filePath = Application.persistentDataPath + "data.json";
-            if (File.Exists(filePath))
-            {
-                using (StreamReader reader = new StreamReader(filePath))
-                {
-                    string json = reader.ReadToEnd();
 
-                    return json;
-                }
-            }
-            else
-                Debug.LogWarning("File not found!");
-        }
-        return "";
+        questionsController.SaveData(questionsStructure);
     }
 
-    public void SaveData()
-    {
-        string filePath = Path.Combine(Application.streamingAssetsPath, "data.json");
-        string dataToSave = JsonHelper.ToJson(questionGameData, true);
-
-        File.WriteAllText(filePath, dataToSave);
-    }
-
-    public void SaveDataa()
-    {
-        string filePath = Path.Combine(Application.streamingAssetsPath, "dataa.json");
-        string json = "{'Items':'answer'}";
-
-        string dataToSave = JsonUtility.ToJson(json, true);
-
-        File.WriteAllText(filePath, dataToSave);
-    }
 
     public void DisableButtons()
     {

@@ -9,20 +9,18 @@ public class AnswerButton : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI answerText;
 
-    private string correctAnswer;
-
     [SerializeField]
     private Button button;
 
+    [SerializeField]
+    private QuestionData questionData;
 
-    public QuestionData questionData;
-    public int questionId;
+    private string correctAnswer;
 
-    public void Setup(string answer, string correctAnswer, int id)
+    public void Setup(string answer, string correctAnswer)
     {
         answerText.text = answer;
         this.correctAnswer = correctAnswer;
-        questionId = id;
     }
 
     public void CheckingValidity()
@@ -38,7 +36,7 @@ public class AnswerButton : MonoBehaviour
         }
 
         questionData.DisableButtons();
-        questionData.PlayerAnswered(questionId, answerText.text);
+        questionData.PlayerAnswered(answerText.text);
     }
 
     public void DisableButton()

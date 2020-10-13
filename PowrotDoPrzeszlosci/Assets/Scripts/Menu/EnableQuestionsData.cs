@@ -7,8 +7,9 @@ using TMPro;
 
 public class EnableQuestionsData : MonoBehaviour
 {
-    private QuestionGameData[] questionGameData;
-    private QuestionGameData questionData;
+    [SerializeField]
+    private QuestionsController questionsController;
+    private QuestionsStructure questionsStructure;
 
     [SerializeField]
     private GameObject[] questionButtons;
@@ -17,69 +18,34 @@ public class EnableQuestionsData : MonoBehaviour
 
     private void Start()
     {
-        LoadData();
+        questionsStructure = questionsController.GetData();
         SetupQuestionButtons();
     }
 
     public void SetupQuestionButtons()
     {
         int points = 0;
-        for(int i = 0; i < 9; i++)
+        questionsStructure = questionsController.GetData();
+        Debug.Log("Enable");
+        Debug.Log(questionsStructure);
+        foreach (Question i in questionsStructure.Questions)
         {
-            if (questionGameData[i].playerAnswer != "none")
+            if (i.playerAnswer != "none")
             {
-                if (questionGameData[i].playerAnswer == questionGameData[i].correctAnswer)
+                if (i.playerAnswer == i.correctAnswer)
                 {
-                    Activate(questionButtons[i], true);
+                    Activate(questionButtons[i.id], true);
                     points += 1;
                 }
                 else
-                    Activate(questionButtons[i], false);
+                    Activate(questionButtons[i.id], false);
             }
                 
             else
-                questionButtons[i].GetComponent<Button>().enabled = false;
+                questionButtons[i.id].GetComponent<Button>().enabled = false;
         }
-        Debug.Log(points);
+
         pointsText.text = points.ToString();
-    }
-
-    public void LoadData()
-    {
-        string json = ReadFromFile();
-
-        questionGameData = JsonHelper.FromJson<QuestionGameData>(json);
-    }
-
-    private string ReadFromFile()
-    {
-        string filePath = Path.Combine(Application.streamingAssetsPath, "data.json");
-
-        if (File.Exists(filePath))
-        {
-            using (StreamReader reader = new StreamReader(filePath))
-            {
-                string json = reader.ReadToEnd();
-
-                return json;
-            }
-        }
-        else
-        {
-            filePath = Application.persistentDataPath + "data.json";
-            if (File.Exists(filePath))
-            {
-                using (StreamReader reader = new StreamReader(filePath))
-                {
-                    string json = reader.ReadToEnd();
-
-                    return json;
-                }
-            }
-            else
-                Debug.LogWarning("File not found!");
-        }
-        return "";
     }
 
     private void Activate(GameObject gameObject, bool state)
