@@ -2,8 +2,10 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AchievementsQuestion
+    - AnswerButton
     - AnswerText
     - AnyStateAnimator
+    - CloseQuiz
     - EnableQuestionsData
     - FixedJoystick
     - LevelMenu
@@ -14,7 +16,9 @@ ScriptsOnlyBuild:
     - PauseMenu
     - Player
     - PlayerAnimation
+    - QuestionData
     - QuestionText
+    - QuestionsController
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
@@ -153,29 +157,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12300}
     - Class: 114
-      Script: {instanceID: 12872}
+      Script: {instanceID: 12828}
     - Class: 114
-      Script: {instanceID: 13272}
+      Script: {instanceID: 12874}
     - Class: 114
-      Script: {instanceID: 13608}
+      Script: {instanceID: 13274}
     - Class: 114
-      Script: {instanceID: 13706}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 15198}
+      Script: {instanceID: 13614}
     - Class: 114
-      Script: {instanceID: 15298}
+      Script: {instanceID: 13708}
     - Class: 114
-      Script: {instanceID: 15444}
+      Script: {instanceID: 15200}
     - Class: 114
-      Script: {instanceID: 15834}
+      Script: {instanceID: 15300}
     - Class: 114
-      Script: {instanceID: 16764}
+      Script: {instanceID: 15446}
     - Class: 114
-      Script: {instanceID: 16872}
+      Script: {instanceID: 15836}
     - Class: 114
-      Script: {instanceID: 17030}
+      Script: {instanceID: 15898}
     - Class: 114
-      Script: {instanceID: 17184}
+      Script: {instanceID: 16766}
+    - Class: 114
+      Script: {instanceID: 16876}
+    - Class: 114
+      Script: {instanceID: 17034}
+    - Class: 114
+      Script: {instanceID: 17124}
+    - Class: 114
+      Script: {instanceID: 17188}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -258,87 +270,89 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12342}
     - Class: 114
-      Script: {instanceID: 12632}
+      Script: {instanceID: 12344}
     - Class: 114
-      Script: {instanceID: 12858}
+      Script: {instanceID: 12634}
     - Class: 114
-      Script: {instanceID: 13272}
+      Script: {instanceID: 12860}
     - Class: 114
-      Script: {instanceID: 13332}
+      Script: {instanceID: 13274}
     - Class: 114
-      Script: {instanceID: 13436}
+      Script: {instanceID: 13334}
     - Class: 114
-      Script: {instanceID: 13608}
+      Script: {instanceID: 13438}
     - Class: 114
-      Script: {instanceID: 13612}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13700}
+      Script: {instanceID: 13614}
     - Class: 114
-      Script: {instanceID: 13776}
+      Script: {instanceID: 13702}
     - Class: 114
-      Script: {instanceID: 14080}
+      Script: {instanceID: 13778}
     - Class: 114
-      Script: {instanceID: 14130}
+      Script: {instanceID: 14082}
     - Class: 114
-      Script: {instanceID: 14218}
+      Script: {instanceID: 14132}
     - Class: 114
-      Script: {instanceID: 14378}
+      Script: {instanceID: 14220}
+    - Class: 114
+      Script: {instanceID: 14380}
     - Class: 114
       Script: {instanceID: 14814}
     - Class: 114
-      Script: {instanceID: 15206}
+      Script: {instanceID: 15186}
     - Class: 114
-      Script: {instanceID: 15294}
+      Script: {instanceID: 15208}
     - Class: 114
-      Script: {instanceID: 15298}
+      Script: {instanceID: 15296}
     - Class: 114
-      Script: {instanceID: 15318}
+      Script: {instanceID: 15300}
     - Class: 114
-      Script: {instanceID: 15328}
+      Script: {instanceID: 15320}
     - Class: 114
-      Script: {instanceID: 15424}
+      Script: {instanceID: 15330}
     - Class: 114
-      Script: {instanceID: 15486}
+      Script: {instanceID: 15426}
     - Class: 114
-      Script: {instanceID: 15540}
+      Script: {instanceID: 15488}
     - Class: 114
-      Script: {instanceID: 15552}
+      Script: {instanceID: 15542}
     - Class: 114
-      Script: {instanceID: 15566}
+      Script: {instanceID: 15554}
     - Class: 114
-      Script: {instanceID: 15834}
+      Script: {instanceID: 15568}
     - Class: 114
-      Script: {instanceID: 15974}
+      Script: {instanceID: 15836}
     - Class: 114
-      Script: {instanceID: 16074}
+      Script: {instanceID: 15976}
     - Class: 114
-      Script: {instanceID: 16412}
+      Script: {instanceID: 16076}
     - Class: 114
-      Script: {instanceID: 16478}
+      Script: {instanceID: 16414}
     - Class: 114
-      Script: {instanceID: 16656}
+      Script: {instanceID: 16480}
     - Class: 114
-      Script: {instanceID: 16712}
+      Script: {instanceID: 16658}
     - Class: 114
-      Script: {instanceID: 16764}
+      Script: {instanceID: 16714}
     - Class: 114
-      Script: {instanceID: 16978}
+      Script: {instanceID: 16766}
+    - Class: 114
+      Script: {instanceID: 16848}
     - Class: 114
       Script: {instanceID: 16982}
     - Class: 114
-      Script: {instanceID: 17030}
+      Script: {instanceID: 16986}
     - Class: 114
-      Script: {instanceID: 17058}
+      Script: {instanceID: 17034}
     - Class: 114
-      Script: {instanceID: 17222}
+      Script: {instanceID: 17062}
     - Class: 114
-      Script: {instanceID: 17230}
+      Script: {instanceID: 17226}
     - Class: 114
-      Script: {instanceID: 27436}
+      Script: {instanceID: 17234}
     - Class: 114
-      Script: {instanceID: 44716}
-    - Class: 114
-      Script: {instanceID: 51042}
+      Script: {instanceID: 19192}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -500,6 +514,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering.UI
     className: DebugUIHandlerVBox
+  - hash:
+      serializedVersion: 2
+      Hash: 3c356daa42ca174224070fb105d65373
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnswerText
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -970,6 +990,12 @@ ScriptsOnlyBuild:
     className: MotionBlur
   - hash:
       serializedVersion: 2
+      Hash: cebf99c6c04bf09e6b00da634863e587
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnableQuestionsData
+  - hash:
+      serializedVersion: 2
       Hash: 11319334e5365797f8056694f9b5dae4
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1402,6 +1428,12 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
+      Hash: 992aa1f4d0804021601ff0b316b15c8a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AchievementsQuestion
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1546,22 +1578,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 992aa1f4d0804021601ff0b316b15c8a
+      Hash: ee20d80db0e71b45fa52fb7b04c4606c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: AchievementsQuestion
-  - hash:
-      serializedVersion: 2
-      Hash: 3c356daa42ca174224070fb105d65373
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AnswerText
-  - hash:
-      serializedVersion: 2
-      Hash: cebf99c6c04bf09e6b00da634863e587
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EnableQuestionsData
+    className: QuestionsController
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

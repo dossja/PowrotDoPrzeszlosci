@@ -65,8 +65,20 @@ public class EnableQuestionsData : MonoBehaviour
             }
         }
         else
-            Debug.LogWarning("File not found!");
+        {
+            filePath = Application.persistentDataPath + "data.json";
+            if (File.Exists(filePath))
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    string json = reader.ReadToEnd();
 
+                    return json;
+                }
+            }
+            else
+                Debug.LogWarning("File not found!");
+        }
         return "";
     }
 

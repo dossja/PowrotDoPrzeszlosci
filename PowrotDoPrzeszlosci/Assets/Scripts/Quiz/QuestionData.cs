@@ -34,6 +34,7 @@ public class QuestionData: MonoBehaviour
     private void Start()
     {
         LoadData();
+        SaveDataa();
         SetupQuestion(questionId);
     }
 
@@ -80,8 +81,20 @@ public class QuestionData: MonoBehaviour
             }
         }
         else
-            Debug.LogWarning("File not found!");
+        {
+            filePath = Application.persistentDataPath + "data.json";
+            if (File.Exists(filePath))
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    string json = reader.ReadToEnd();
 
+                    return json;
+                }
+            }
+            else
+                Debug.LogWarning("File not found!");
+        }
         return "";
     }
 
@@ -89,6 +102,16 @@ public class QuestionData: MonoBehaviour
     {
         string filePath = Path.Combine(Application.streamingAssetsPath, "data.json");
         string dataToSave = JsonHelper.ToJson(questionGameData, true);
+
+        File.WriteAllText(filePath, dataToSave);
+    }
+
+    public void SaveDataa()
+    {
+        string filePath = Path.Combine(Application.streamingAssetsPath, "dataa.json");
+        string json = "{'Items':'answer'}";
+
+        string dataToSave = JsonUtility.ToJson(json, true);
 
         File.WriteAllText(filePath, dataToSave);
     }
