@@ -14,12 +14,10 @@ public class QuestionsController : MonoBehaviour
     {
         filePath = Path.Combine(Application.persistentDataPath, "data.json");
         GetDataFileJson();
-        Debug.Log(GetData());
     }
 
     public QuestionsStructure GetData()
     {
-        /*Debug.Log(questionsStructure);*/
         return questionsStructure;
     }
 

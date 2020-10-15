@@ -7,7 +7,6 @@ public class PlayerUtilities
 {
     private Player player;
 
-
     private Joystick joystick;
 
     public PlayerUtilities(Player player, Joystick joystick)
@@ -24,14 +23,17 @@ public class PlayerUtilities
         else
             player.Stats.Direction = new Vector2(0, player.Components.Rigidbody.velocity.y);
 
-        if(joystick.Vertical > 0.5f)
+        if (joystick.Vertical > 0.5f)
             player.Actions.Jump();
     }
 
     public bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(player.Components.Collider.bounds.center, player.Components.Collider.bounds.size, 0, Vector2.down, 0.05f, player.Components.GroundLayer);
-
+        RaycastHit2D hit = Physics2D.BoxCast(player.Components.Collider.bounds.center, player.Components.Collider.bounds.size, 0, Vector2.down, 0.1f, player.Components.GroundLayer);
+        if(hit.collider == null)
+        {
+            hit = Physics2D.BoxCast(player.Components.Collider.bounds.center, player.Components.Collider.bounds.size, 0, Vector2.down, 0.1f, player.Components.EnemyLayer);
+        }
         return hit.collider != null;
     }
 

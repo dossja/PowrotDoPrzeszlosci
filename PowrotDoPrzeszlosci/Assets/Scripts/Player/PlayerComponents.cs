@@ -13,9 +13,12 @@ public class PlayerComponents
     private Collider2D collider;
     [SerializeField]
     private LayerMask groundLayer;
+    [SerializeField]
+    private LayerMask enemyLayer;
 
     public Rigidbody2D Rigidbody { get => rigidbody; }
     public AnyStateAnimator Animator { get => animator; } 
     public Collider2D Collider { get => collider; }
     public LayerMask GroundLayer { get => groundLayer; }   
+    public LayerMask EnemyLayer { get => enemyLayer; }   
 }

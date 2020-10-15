@@ -25,10 +25,6 @@ public class AchievementsQuestion : MonoBehaviour
 
     public void SetupQuestion(int id)
     {
-        questionsStructure = questionsController.GetData();
-        Debug.Log("AchievementsQuestion");
-        Debug.Log(questionsStructure);
-
         foreach (Question i in questionsStructure.Questions)
         {
             if (i.id == id)

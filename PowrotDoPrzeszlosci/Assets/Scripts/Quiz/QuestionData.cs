@@ -43,15 +43,11 @@ public class QuestionData: MonoBehaviour
 
     public void SetupQuestion(int id)
     {
-        questionsStructure = questionsController.GetData();
-        Debug.Log(questionsStructure);
         foreach (Question i in questionsStructure.Questions)
         {
             if (i.id == id)
                 questionData = i;
         }
-
-        Debug.Log(questionData.question);
 
         answer1.Setup(questionData.answer1, questionData.correctAnswer);
         answer2.Setup(questionData.answer2, questionData.correctAnswer);
@@ -64,11 +60,6 @@ public class QuestionData: MonoBehaviour
     public void PlayerAnswered(string answer)
     {
         questionData.playerAnswer = answer;
-
-        foreach (Question i in questionsStructure.Questions)
-        {
-            Debug.Log(i.playerAnswer);
-        }
 
         questionsController.SaveData(questionsStructure);
     }

@@ -25,9 +25,7 @@ public class EnableQuestionsData : MonoBehaviour
     public void SetupQuestionButtons()
     {
         int points = 0;
-        questionsStructure = questionsController.GetData();
-        Debug.Log("Enable");
-        Debug.Log(questionsStructure);
+
         foreach (Question i in questionsStructure.Questions)
         {
             if (i.playerAnswer != "none")
