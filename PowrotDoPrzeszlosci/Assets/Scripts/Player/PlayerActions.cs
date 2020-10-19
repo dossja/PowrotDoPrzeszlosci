@@ -57,6 +57,6 @@ public class PlayerActions
 
     private void CreateParticle()
     {
-        Debug.Log("Particles");
+        particle.Play();
     }
 }
