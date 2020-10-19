@@ -1,14 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using UnityEngine;
 
 public class PlayerActions
 {
     private Player player;
 
-    public PlayerActions(Player player)
+    private ParticleSystem particle;
+
+    private bool goingRight;
+
+    public PlayerActions(Player player, ParticleSystem particle)
     {
         this.player = player;
+        this.particle = particle;
+        goingRight = true;
     }
 
     public void Move(Transform transform)
@@ -17,7 +24,19 @@ public class PlayerActions
 
         if(player.Stats.Direction.x != 0)
         {
+            if (player.Stats.Direction.x < 0 && goingRight == true)
+            {
+                CreateParticle();
+                goingRight = false;
+            }
+            else if (player.Stats.Direction.x > 0 && goingRight == false)
+            {
+                CreateParticle();
+                goingRight = true;
+            }
             transform.localScale = new Vector3(player.Stats.Direction.x < 0 ? 1 : -1, 1, 1);
+            particle.transform.localScale = new Vector3(player.Stats.Direction.x > 0 ? 1 : -1, 1, 1);
+
             player.Components.Animator.TryPlayAnimation("Run");
         }
         else if(player.Components.Rigidbody.velocity == Vector2.zero)
@@ -30,9 +49,14 @@ public class PlayerActions
     {
         if (player.Utilities.IsGrounded())
         {
-            /*player.Components.Rigidbody.AddForce(new Vector2(0, player.Stats.JumpForce), ForceMode2D.Impulse);*/
+            CreateParticle();
             player.Components.Rigidbody.velocity = Vector2.up * player.Stats.JumpForce;
             player.Components.Animator.TryPlayAnimation("Jump");
         }
+    }
+
+    private void CreateParticle()
+    {
+        Debug.Log("Particles");
     }
 }

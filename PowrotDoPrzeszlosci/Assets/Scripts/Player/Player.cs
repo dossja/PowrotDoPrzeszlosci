@@ -9,12 +9,13 @@ public class Player : MonoBehaviour
     [SerializeField]
     private PlayerComponents components;
     private PlayerReferences references;
-    [SerializeField]
     private PlayerUtilities utilities;
     private PlayerActions actions;
 
     [SerializeField]
     private Joystick joystick;
+    [SerializeField]
+    private ParticleSystem particle;
 
     public PlayerComponents Components { get => components; }
     public PlayerStats Stats { get => stats; }
@@ -25,7 +26,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         transform.localScale = new Vector3(-1, 1, 1);
-        actions = new PlayerActions(this);
+        actions = new PlayerActions(this, particle);
         utilities = new PlayerUtilities(this, joystick);
         stats.Speed = stats.RunSpeed;
 
