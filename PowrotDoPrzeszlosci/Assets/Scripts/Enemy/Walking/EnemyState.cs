@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyState : MonoBehaviour
 {
+    private bool alive;
     [SerializeField]
     GameObject eye;
 
@@ -26,6 +27,7 @@ public class EnemyState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        alive = true;
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
     }
@@ -33,19 +35,26 @@ public class EnemyState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1);
-
-        if (distanceToPlayer < enemyEyesight)
+        if(alive == true)
         {
-            if (groundInfo.collider == false)
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+            RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1);
+
+            if (distanceToPlayer < enemyEyesight)
             {
-                GroundEnded();
+                if (groundInfo.collider == false)
+                {
+                    GroundEnded();
+                }
+                else
+                {
+                    ChasePlayer();
+                }
             }
             else
             {
-                ChasePlayer();
+                StopChase();
             }
         }
         else
@@ -91,5 +100,15 @@ public class EnemyState : MonoBehaviour
         eye.SetActive(false);
         animator.Play("idle");
         rigidbody.velocity = Vector2.zero;
+    }
+
+    public void Dead()
+    {
+        alive = false;
+    }
+
+    public bool isAlive()
+    {
+        return alive;
     }
 }

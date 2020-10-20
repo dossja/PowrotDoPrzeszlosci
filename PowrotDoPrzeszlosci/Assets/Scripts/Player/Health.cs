@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
     [SerializeField]
     private int health;
+    [SerializeField]
+    private Player player;
 
     [SerializeField]
     private Image[] hearts;
@@ -24,6 +27,10 @@ public class Health : MonoBehaviour
     {
         if (health > 3)
             health = 3;
+
+        else if (health == 0)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         for (int i = 0; i < hearts.Length; i++)
         {
             if(i < health)
@@ -35,5 +42,11 @@ public class Health : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
+    }
+
+    public void RemoveHeart()
+    {
+        health -= 1;
+        Debug.Log(health);
     }
 }
