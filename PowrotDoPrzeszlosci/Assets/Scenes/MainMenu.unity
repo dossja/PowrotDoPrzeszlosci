@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 194052424}
   - component: {fileID: 194052427}
   m_Layer: 5
-  m_Name: Poziom1
+  m_Name: Pytanie1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1028,7 +1028,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 308398639}
   m_OnClick:
     m_PersistentCalls:
@@ -1172,7 +1172,7 @@ GameObject:
   - component: {fileID: 351622379}
   - component: {fileID: 351622382}
   m_Layer: 5
-  m_Name: Poziom6
+  m_Name: Pytanie6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4774,7 +4774,7 @@ GameObject:
   - component: {fileID: 1244764548}
   - component: {fileID: 1244764551}
   m_Layer: 5
-  m_Name: Poziom3
+  m_Name: Pytanie3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6530,7 +6530,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1503209943}
   m_OnClick:
     m_PersistentCalls:
@@ -6869,7 +6869,7 @@ GameObject:
   - component: {fileID: 1554301956}
   - component: {fileID: 1554301959}
   m_Layer: 5
-  m_Name: Poziom2
+  m_Name: Pytanie2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7164,7 +7164,7 @@ GameObject:
   - component: {fileID: 1563449537}
   - component: {fileID: 1563449540}
   m_Layer: 5
-  m_Name: Poziom8
+  m_Name: Pytanie8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7818,7 +7818,7 @@ GameObject:
   - component: {fileID: 1707759651}
   - component: {fileID: 1707759654}
   m_Layer: 5
-  m_Name: Poziom5
+  m_Name: Pytanie5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7979,7 +7979,7 @@ GameObject:
   - component: {fileID: 1738715458}
   - component: {fileID: 1738715461}
   m_Layer: 5
-  m_Name: Poziom4
+  m_Name: Pytanie4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8757,7 +8757,7 @@ GameObject:
   - component: {fileID: 1944681297}
   - component: {fileID: 1944681300}
   m_Layer: 5
-  m_Name: Poziom7
+  m_Name: Pytanie7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
