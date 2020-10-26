@@ -25,6 +25,8 @@ public class PlayerUtilities
 
         if (joystick.Vertical > 0.5f)
             player.Actions.Jump();
+        else if (joystick.Vertical < -0.5f)
+            player.Actions.Crouch();
     }
 
     public bool IsGrounded()
@@ -33,7 +35,18 @@ public class PlayerUtilities
         if(hit.collider == null)
         {
             hit = Physics2D.BoxCast(player.Components.Collider.bounds.center, player.Components.Collider.bounds.size, 0, Vector2.down, 0.1f, player.Components.EnemyLayer);
+            if (hit.collider == null)
+            {
+                hit = Physics2D.BoxCast(player.Components.Collider.bounds.center, player.Components.Collider.bounds.size, 0, Vector2.down, 0.1f, player.Components.TileLayer);
+            }
         }
+        return hit.collider != null;
+    }
+
+    public bool IsOnTile()
+    {
+        RaycastHit2D hit = Physics2D.BoxCast(player.Components.Collider.bounds.center, player.Components.Collider.bounds.size, 0, Vector2.down, 0.1f, player.Components.TileLayer);
+
         return hit.collider != null;
     }
 

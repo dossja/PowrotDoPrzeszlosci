@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerActions
 {
@@ -11,10 +12,13 @@ public class PlayerActions
 
     private bool goingRight;
 
-    public PlayerActions(Player player, ParticleSystem particle)
+    private PlayerPlatformDown playerPlatform;
+
+    public PlayerActions(Player player, ParticleSystem particle, PlayerPlatformDown playerPlatform)
     {
         this.player = player;
         this.particle = particle;
+        this.playerPlatform = playerPlatform;
         goingRight = true;
     }
 
@@ -53,6 +57,12 @@ public class PlayerActions
             player.Components.Rigidbody.velocity = Vector2.up * player.Stats.JumpForce;
             player.Components.Animator.TryPlayAnimation("Jump");
         }
+    }
+
+    public void Crouch()
+    {
+        if(player.Utilities.IsOnTile())
+            playerPlatform.GoingDown();
     }
 
     private void CreateParticle()

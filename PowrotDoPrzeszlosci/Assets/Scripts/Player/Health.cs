@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
             health = 3;
 
         else if (health == 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PlayerDeath();
 
         for (int i = 0; i < hearts.Length; i++)
         {
@@ -47,6 +47,10 @@ public class Health : MonoBehaviour
     public void RemoveHeart()
     {
         health -= 1;
-        Debug.Log(health);
+    }
+
+    private void PlayerDeath()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
