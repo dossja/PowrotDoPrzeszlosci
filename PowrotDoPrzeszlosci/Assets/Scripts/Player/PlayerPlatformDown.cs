@@ -20,10 +20,8 @@ public class PlayerPlatformDown : MonoBehaviour
     {
         if (crouch)
         {
-            Debug.Log(waitingTime);
             if (waitingTime <= 0f)
             {
-                Debug.Log("Change");
                 platformEffector.rotationalOffset = 0f;
                 crouch = false; 
                 waitingTime = 0.8f;

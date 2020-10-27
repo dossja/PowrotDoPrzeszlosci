@@ -51,7 +51,12 @@ public class Player : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
+    { 
         actions.Move(transform);
     }
+
+    public float GetJoystickVertical()
+    {
+        return joystick.Vertical;
+    }    
 }
