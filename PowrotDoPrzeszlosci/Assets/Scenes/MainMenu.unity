@@ -4669,7 +4669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1086529865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8500,7 +8500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1587723129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8542,6 +8542,7 @@ MonoBehaviour:
   - {fileID: 1239416738}
   - {fileID: 1503209940}
   - {fileID: 308398636}
+  url: https://raw.githubusercontent.com/dossja/PowrotDoPrzeszlosci/master/PowrotDoPrzeszlosci/Assets/StreamingAssets/data.json
 --- !u!1 &1594540003
 GameObject:
   m_ObjectHideFlags: 0

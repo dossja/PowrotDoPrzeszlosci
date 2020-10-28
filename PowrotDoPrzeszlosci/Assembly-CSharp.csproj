@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Quiz\AnswerButton.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
+    <Compile Include="Assets\Scripts\Quiz\SceneQuizTrigger.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerActions.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerReferences.cs" />
@@ -94,7 +95,7 @@
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
-    <Compile Include="Assets\Scripts\Menu\LevelMenu.cs" />
+    <Compile Include="Assets\Scripts\Menu\Load Level\LevelMenuController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Animation\AnyStateAnimation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -126,7 +127,8 @@
     <Compile Include="Assets\Scripts\Quiz\QuestionGameData.cs" />
     <Compile Include="Assets\Scripts\Quiz\QuestionData.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\Quiz\SceneQuizTrigger.cs" />
+    <Compile Include="Assets\Scripts\Menu\Load Level\LevelDataStructure.cs" />
+    <Compile Include="Assets\Scripts\Menu\Load Level\LevelData.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
