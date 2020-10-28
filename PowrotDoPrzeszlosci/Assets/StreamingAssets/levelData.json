@@ -1,0 +1,16 @@
+{
+  "Levels": [
+    {
+      "id": "0",
+      "enabled": true
+    },
+    {
+      "id": "1",
+      "enabled": false
+    },
+    {
+      "id": "2",
+      "enabled": false
+    }
+  ]
+}
