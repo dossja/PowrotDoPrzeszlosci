@@ -22,6 +22,13 @@ public class EnableQuestionsData : MonoBehaviour
         SetupQuestionButtons();
     }
 
+    public void ReloadData()
+    {
+        questionsController.DeleteAnswers();
+        questionsStructure = questionsController.GetData();
+        SetupQuestionButtons();
+    }
+
     public void SetupQuestionButtons()
     {
         int points = 0;

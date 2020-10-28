@@ -756,9 +756,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AchievementsMenu, Assembly-CSharp
-        m_MethodName: DeleteAchievements
+      - m_Target: {fileID: 2137516120}
+        m_TargetAssemblyTypeName: EnableQuestionsData, Assembly-CSharp
+        m_MethodName: ReloadData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1218,8 +1218,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1587723130}
-        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
+      - m_Target: {fileID: 1587723131}
+        m_TargetAssemblyTypeName: LevelData, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
@@ -4040,6 +4040,7 @@ GameObject:
   - component: {fileID: 1031531896}
   - component: {fileID: 1031531895}
   - component: {fileID: 1031531899}
+  - component: {fileID: 1031531901}
   - component: {fileID: 1031531900}
   m_Layer: 5
   m_Name: Canvas
@@ -4241,6 +4242,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1031531901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031531894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52de51b78c0cb749af8f3eb78bdfa26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://raw.githubusercontent.com/dossja/PowrotDoPrzeszlosci/master/PowrotDoPrzeszlosci/Assets/StreamingAssets/levelData.json
 --- !u!1 &1038999402
 GameObject:
   m_ObjectHideFlags: 0
@@ -4669,7 +4683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1086529865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5451,8 +5465,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1587723130}
-        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
+      - m_Target: {fileID: 1587723131}
+        m_TargetAssemblyTypeName: LevelData, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
@@ -7312,8 +7326,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1587723130}
-        m_TargetAssemblyTypeName: LevelMenu, Assembly-CSharp
+      - m_Target: {fileID: 1587723131}
+        m_TargetAssemblyTypeName: LevelData, Assembly-CSharp
         m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
@@ -8493,14 +8507,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1587723129}
-  - component: {fileID: 1587723130}
+  - component: {fileID: 1587723131}
   m_Layer: 5
   m_Name: ContinueMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1587723129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8526,7 +8540,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1587723130
+--- !u!114 &1587723131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8535,14 +8549,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1587723128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b52de51b78c0cb749af8f3eb78bdfa26, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e1a7b12a3401624590e06cb70d12a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelButtons:
   - {fileID: 1239416738}
   - {fileID: 1503209940}
   - {fileID: 308398636}
-  url: https://raw.githubusercontent.com/dossja/PowrotDoPrzeszlosci/master/PowrotDoPrzeszlosci/Assets/StreamingAssets/data.json
+  levelMenuController: {fileID: 1031531901}
+  levelId: 0
 --- !u!1 &1594540003
 GameObject:
   m_ObjectHideFlags: 0
@@ -11016,7 +11031,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2137516118}
   - component: {fileID: 2137516120}
-  - component: {fileID: 2137516119}
   m_Layer: 5
   m_Name: AchievementsMenu
   m_TagString: Untagged
@@ -11046,19 +11060,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2137516119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137516117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51abce9e4bcbd3040b2fd9599b60bac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  url: https://raw.githubusercontent.com/dossja/PowrotDoPrzeszlosci/master/PowrotDoPrzeszlosci/Assets/StreamingAssets/data.json
 --- !u!114 &2137516120
 MonoBehaviour:
   m_ObjectHideFlags: 0

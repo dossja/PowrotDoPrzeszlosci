@@ -74,4 +74,14 @@ public class QuestionsController : MonoBehaviour
     {
         File.WriteAllText(filePath, dataToSave);
     }
+
+    public void DeleteAnswers()
+    {
+        foreach(Question i in questionsStructure.Questions)
+        {
+            i.playerAnswer = "none";
+        }
+
+        SaveData(questionsStructure);
+    }
 }

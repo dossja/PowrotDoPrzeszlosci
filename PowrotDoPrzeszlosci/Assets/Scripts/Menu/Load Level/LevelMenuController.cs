@@ -67,7 +67,7 @@ public class LevelMenuController : MonoBehaviour
             Debug.LogError("Error in getJsonData");
     }
 
-    public void SaveData(QuestionsStructure data)
+    public void SaveData(LevelDataStructure data)
     {
         string dataToSave = JsonUtility.ToJson(data);
 
