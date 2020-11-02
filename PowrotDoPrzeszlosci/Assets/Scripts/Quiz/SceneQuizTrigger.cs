@@ -17,6 +17,8 @@ public class SceneQuizTrigger : MonoBehaviour
     private GameObject joystickUI;
     [SerializeField]
     private Button button;
+    [SerializeField]
+    private LevelEnd levelEnd;
     private bool entered;
     private GameObject board;
 
@@ -32,7 +34,6 @@ public class SceneQuizTrigger : MonoBehaviour
         {
             entered = true;
         }
-        Debug.Log(entered);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -41,7 +42,6 @@ public class SceneQuizTrigger : MonoBehaviour
         {
             entered = false;
         }
-        Debug.Log(entered);
     }
 
     public void ButtonPressed()
@@ -53,6 +53,7 @@ public class SceneQuizTrigger : MonoBehaviour
             joystickUI.SetActive(false);
             questionMenu.SetActive(true);
             button.gameObject.SetActive(false);
+            levelEnd.questionAnswered();
             Time.timeScale = 0.0f;
 
             Destroy(board);

@@ -56,12 +56,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
+    <Compile Include="Assets\Scripts\Menu\Load Level\LevelDataStructure.cs" />
     <Compile Include="Assets\Scripts\Menu\OptionsMenu.cs" />
     <Compile Include="Assets\Scripts\Animation\AnyStateAnimator.cs" />
     <Compile Include="Assets\Scripts\Menu\LoadPauseMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\AnswerText.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerComponents.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Scripts\Menu\Load Level\LevelData.cs" />
     <Compile Include="Assets\Scripts\Quiz\QuestionsStructure.cs" />
     <Compile Include="Assets\Scripts\Quiz\AnswerButton.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
@@ -127,8 +129,7 @@
     <Compile Include="Assets\Scripts\Quiz\QuestionGameData.cs" />
     <Compile Include="Assets\Scripts\Quiz\QuestionData.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\Menu\Load Level\LevelDataStructure.cs" />
-    <Compile Include="Assets\Scripts\Menu\Load Level\LevelData.cs" />
+    <Compile Include="Assets\Scripts\Level\LevelEnd.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
