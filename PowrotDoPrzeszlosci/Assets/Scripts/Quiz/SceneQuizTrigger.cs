@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SceneQuizTrigger : MonoBehaviour
 {
@@ -14,33 +15,44 @@ public class SceneQuizTrigger : MonoBehaviour
     private GameObject buttonUI;
     [SerializeField]
     private GameObject joystickUI;
+    [SerializeField]
+    private Button button;
+    private bool entered;
     private GameObject board;
 
-    private bool crouch;
-    // Start is called before the first frame update
     void Start()
     {
         board = this.gameObject;
-        crouch = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (player.GetJoystickVertical() < -0.5f)
-            crouch = true;
-        else
-            crouch = false;
+        entered = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
+    { 
+        if (collision.gameObject.name == "Player")
+        {
+            entered = true;
+        }
+        Debug.Log(entered);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player" && crouch == true)
+        if(collision.gameObject.name == "Player")
+        {
+            entered = false;
+        }
+        Debug.Log(entered);
+    }
+
+    public void ButtonPressed()
+    {
+        if(entered)
         {
             heartsUI.SetActive(false);
             buttonUI.SetActive(false);
             joystickUI.SetActive(false);
             questionMenu.SetActive(true);
+            button.gameObject.SetActive(false);
             Time.timeScale = 0.0f;
 
             Destroy(board);
