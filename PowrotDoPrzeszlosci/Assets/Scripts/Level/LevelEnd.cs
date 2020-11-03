@@ -10,7 +10,9 @@ public class LevelEnd : MonoBehaviour
     private GameObject gameObject;
     [SerializeField]
     private GameObject light;
-    // Start is called before the first frame update
+    [SerializeField]
+    private LevelMenuController levelMenuController;
+
     void Start()
     {
         questionsAnswered = 0;
@@ -21,7 +23,7 @@ public class LevelEnd : MonoBehaviour
         questionsAnswered += 1;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if(questionsAnswered == 3)
@@ -33,10 +35,13 @@ public class LevelEnd : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Collides");
         if(collision.gameObject.name == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            levelMenuController.UnlockLevel(SceneManager.GetActiveScene().buildIndex);
+            if (SceneManager.GetActiveScene().buildIndex == 3)
+                SceneManager.LoadScene(0);
+            else
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

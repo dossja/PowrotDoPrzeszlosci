@@ -962,6 +962,7 @@ GameObject:
   - component: {fileID: 108157293}
   - component: {fileID: 108157292}
   - component: {fileID: 108157296}
+  - component: {fileID: 108157297}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1154,6 +1155,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &108157297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108157291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52de51b78c0cb749af8f3eb78bdfa26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: https://raw.githubusercontent.com/dossja/PowrotDoPrzeszlosci/master/PowrotDoPrzeszlosci/Assets/StreamingAssets/levelData.json
 --- !u!1 &173336343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,7 +2051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6092217, y: -2.330923, z: -10}
+  m_LocalPosition: {x: 13.86, y: -2.4099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 685390750}
@@ -2304,6 +2318,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelEnd
       objectReference: {fileID: 0}
+    - target: {fileID: 1372446671863972491, guid: 7b4a290ddea62b642840993a04c1c61c,
+        type: 3}
+      propertyPath: levelMenuController
+      value: 
+      objectReference: {fileID: 108157297}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b4a290ddea62b642840993a04c1c61c, type: 3}
 --- !u!114 &656608031 stripped
@@ -3556,7 +3575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065735631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.381, y: -4.029, z: 0}
+  m_LocalPosition: {x: 12.29, y: -3.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1399163448}
@@ -5027,8 +5046,8 @@ MonoBehaviour:
   - {fileID: 1347539479}
   - {fileID: 1630851588}
   m_Bounds:
-    m_Center: {x: 0.22027197, y: -0.4589615, z: 0}
-    m_Extent: {x: 0.52902204, y: 1.8772631, z: 0}
+    m_Center: {x: 0.22027197, y: -0.45896196, z: 0}
+    m_Extent: {x: 0.52902204, y: 1.8772635, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!212 &1399163447
@@ -11777,7 +11796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112526543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.811, y: -2.599, z: -10}
+  m_LocalPosition: {x: 13.86, y: -2.4099998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1074146106}

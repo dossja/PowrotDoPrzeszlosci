@@ -74,4 +74,26 @@ public class LevelMenuController : MonoBehaviour
     {
         File.WriteAllText(filePath, dataToSave);
     }
+
+    public void UnlockLevel(int id)
+    {
+        foreach (LevelState i in levelDataStructure.Levels)
+        {
+            if (i.id == id)
+                i.enabled = true;
+        }
+
+        SaveData(levelDataStructure);
+    }
+
+    public void DeleteLevels()
+    {
+        foreach (LevelState i in levelDataStructure.Levels)
+        {
+            if (i.id > 0)
+                i.enabled = false;
+        }
+
+        SaveData(levelDataStructure);
+    }
 }

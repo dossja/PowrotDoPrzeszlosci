@@ -5,9 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // New game ->  Load first level (Scene with ID 1)
+    [SerializeField]
+    private LevelMenuController levelMenuController;
+    [SerializeField]
+    private QuestionsController questionsController;
+
     public void PlayNewGame()
     {
+        questionsController.DeleteAnswers();
+        levelMenuController.DeleteLevels();
         SceneManager.LoadScene(1);
     }
 
