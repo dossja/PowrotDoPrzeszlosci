@@ -18,7 +18,8 @@ public class OptionsMenu : MonoBehaviour
 
     public void Start()
     {
-        audioMixer.GetFloat("volume", out value);
+        value = PlayerPrefs.GetFloat("volume");
+
         sliderMaster.value = value;
 
         sliderMusic.value = value;
@@ -32,6 +33,9 @@ public class OptionsMenu : MonoBehaviour
         else
             audioMixer.SetFloat("volume", volume);
 
+        audioMixer.GetFloat("volume", out value);
+        PlayerPrefs.SetFloat("volume", value);
+
         if (sliderMusic.value > volume)
             sliderMusic.value = volume;
 
@@ -41,20 +45,27 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetVolumeMusic(float volume)
     {
-        audioMixer.GetFloat("volume", out value);
+        value = PlayerPrefs.GetFloat("volume");
+
         if (volume == 0)
             audioMixer.SetFloat("musicVolume", -80);
         else if (volume < value)
             audioMixer.SetFloat("musicVolume", volume);
+
+        audioMixer.GetFloat("musicVolume", out value);
+        PlayerPrefs.SetFloat("musicVolume", value);
     }
 
     public void SetVolumeSoundEffects(float volume)
     {
-        audioMixer.GetFloat("volume", out value);
+        value = PlayerPrefs.GetFloat("volume");
 
         if (volume == 0)
             audioMixer.SetFloat("soundEffectsVolume", -80);
         else if (volume < value)
             audioMixer.SetFloat("soundEffectsVolume", volume);
+
+        audioMixer.GetFloat("soundEffectsVolume", out value);
+        PlayerPrefs.SetFloat("soundEffectsVolume", value);
     }
 }

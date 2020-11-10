@@ -963,6 +963,7 @@ GameObject:
   - component: {fileID: 108157292}
   - component: {fileID: 108157296}
   - component: {fileID: 108157297}
+  - component: {fileID: 108157298}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1168,6 +1169,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   url: https://raw.githubusercontent.com/dossja/PowrotDoPrzeszlosci/master/PowrotDoPrzeszlosci/Assets/StreamingAssets/levelData.json
+--- !u!114 &108157298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108157291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131bca925eb3d5f46aff07cb20f2c804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 58e25c9f5cf8c414e876e46295efa4fc, type: 2}
 --- !u!1 &173336343
 GameObject:
   m_ObjectHideFlags: 0
@@ -3665,13 +3679,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  player: {fileID: 0}
   hearts:
   - {fileID: 1803329276}
   - {fileID: 448642577}
   - {fileID: 2143164729}
   fullHeart: {fileID: 21300000, guid: 19573350d857fbe4d957c38075e71962, type: 3}
-  emptyHeart: {fileID: 0}
+  playerDissolve: {fileID: 1399163451}
 --- !u!1 &1074146105
 GameObject:
   m_ObjectHideFlags: 3
@@ -4998,6 +5011,7 @@ GameObject:
   - component: {fileID: 1399163446}
   - component: {fileID: 1399163450}
   - component: {fileID: 1399163449}
+  - component: {fileID: 1399163451}
   m_Layer: 12
   m_Name: GirlSideSheet
   m_TagString: Player
@@ -5069,7 +5083,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 22dfd105490010e4a8439e544c45ae9a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5149,6 +5163,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1399163451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399163445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c54f074719d664f82e7e7d918d5fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1408990138
 GameObject:
   m_ObjectHideFlags: 0

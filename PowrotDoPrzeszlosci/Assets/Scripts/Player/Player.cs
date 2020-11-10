@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
             new AnyStateAnimation(RIG.BODY, "Run"),
             new AnyStateAnimation(RIG.BODY, "Jump"),
             new AnyStateAnimation(RIG.BODY, "Fall"),
+            new AnyStateAnimation(RIG.BODY, "Crouch"),
         };
 
         components.Animator.AddAnimations(stateAnimations);

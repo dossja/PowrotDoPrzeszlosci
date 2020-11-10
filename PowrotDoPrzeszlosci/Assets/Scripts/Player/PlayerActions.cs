@@ -62,7 +62,10 @@ public class PlayerActions
     public void Crouch()
     {
         if(player.Utilities.IsOnTile())
+        {
             playerPlatform.GoingDown();
+            player.Components.Animator.TryPlayAnimation("Crouch");
+        }
     }
 
     private void CreateParticle()

@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
     [SerializeField]
     private int health;
-    [SerializeField]
-    private Player player;
 
     [SerializeField]
     private Image[] hearts;
     [SerializeField]
     private Sprite fullHeart;
     [SerializeField]
-    private Sprite emptyHeart;
+    private PlayerDissolve playerDissolve;
 
     private void Start()
     {
@@ -47,10 +44,17 @@ public class Health : MonoBehaviour
     public void RemoveHeart()
     {
         health -= 1;
+        if (health > 0)
+            playerDissolve.PlayerHurt();
     }
 
     private void PlayerDeath()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        playerDissolve.PlayerDead();
+    }
+
+    private void PlayerHurt()
+    {
+        playerDissolve.PlayerHurt();
     }
 }

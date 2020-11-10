@@ -4042,6 +4042,7 @@ GameObject:
   - component: {fileID: 1031531899}
   - component: {fileID: 1031531901}
   - component: {fileID: 1031531900}
+  - component: {fileID: 1031531902}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4255,6 +4256,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   url: https://raw.githubusercontent.com/dossja/PowrotDoPrzeszlosci/master/PowrotDoPrzeszlosci/Assets/StreamingAssets/levelData.json
+--- !u!114 &1031531902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031531894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131bca925eb3d5f46aff07cb20f2c804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 58e25c9f5cf8c414e876e46295efa4fc, type: 2}
 --- !u!1 &1038999402
 GameObject:
   m_ObjectHideFlags: 0
