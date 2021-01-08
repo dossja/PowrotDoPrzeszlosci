@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     private PlayerStats stats;
     [SerializeField]
     private PlayerComponents components;
-    private PlayerReferences references;
     private PlayerUtilities utilities;
     private PlayerActions actions;
 
@@ -47,7 +46,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Utilities.HandleInput();
+        utilities.HandleInput();
         utilities.HandleAir();
     }
 

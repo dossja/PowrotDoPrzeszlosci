@@ -10,7 +10,7 @@ public class EnemyState : MonoBehaviour
     GameObject eye;
 
     [SerializeField]
-    Transform player;
+    private Player player;
 
     [SerializeField]
     float enemyEyesight;
@@ -37,7 +37,7 @@ public class EnemyState : MonoBehaviour
     {
         if(alive == true)
         {
-            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+            float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
             RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 1);
 
@@ -67,12 +67,12 @@ public class EnemyState : MonoBehaviour
     {
         eye.SetActive(true);
         animator.Play("run");
-        if (transform.position.x < player.position.x)
+        if (transform.position.x < player.transform.position.x)
         {
             rigidbody.velocity = new Vector2(enemySpeed, 0);
             transform.localScale = new Vector2(-1, 1);
         }
-        else if (transform.position.x > player.position.x)
+        else if (transform.position.x > player.transform.position.x)
         {
             rigidbody.velocity = new Vector2(-enemySpeed, 0);
             transform.localScale = new Vector2(1, 1);
@@ -85,11 +85,11 @@ public class EnemyState : MonoBehaviour
         animator.Play("idle");
         rigidbody.velocity = Vector2.zero;
 
-        if (transform.position.x < player.position.x)
+        if (transform.position.x < player.transform.position.x)
         {
             transform.localScale = new Vector2(-1, 1);
         }
-        else if (transform.position.x > player.position.x)
+        else if (transform.position.x > player.transform.position.x)
         {
             transform.localScale = new Vector2(1, 1);
         }
@@ -107,8 +107,16 @@ public class EnemyState : MonoBehaviour
         alive = false;
     }
 
-    public bool isAlive()
+    public bool IsAlive()
     {
         return alive;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (IsAlive() && collision.gameObject.name == "Player")
+        {
+            player.GetComponent<Health>().RemoveHeart();
+        }
     }
 }

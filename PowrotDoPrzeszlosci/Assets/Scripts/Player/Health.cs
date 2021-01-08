@@ -12,11 +12,11 @@ public class Health : MonoBehaviour
     private Image[] hearts;
     [SerializeField]
     private Sprite fullHeart;
-    [SerializeField]
     private PlayerDissolve playerDissolve;
 
     private void Start()
     {
+        playerDissolve = GetComponentInChildren<PlayerDissolve>();
         health = 3;
     }
 

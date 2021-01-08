@@ -12,6 +12,8 @@ public class LevelEnd : MonoBehaviour
     private GameObject light;
     [SerializeField]
     private LevelMenuController levelMenuController;
+    [SerializeField]
+    private FadeLevel fadeLevel;
 
     void Start()
     {
@@ -41,7 +43,10 @@ public class LevelEnd : MonoBehaviour
             if (SceneManager.GetActiveScene().buildIndex == 3)
                 SceneManager.LoadScene(0);
             else
+            {
+                fadeLevel.Fade();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
     }
 }
