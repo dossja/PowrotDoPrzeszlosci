@@ -24,6 +24,7 @@ public class LevelEnd : MonoBehaviour
     void Start()
     {
         questionsAnswered = 0;
+        GetComponent<CapsuleCollider2D>().enabled = false;
     }
 
     /// <summary>
@@ -43,6 +44,7 @@ public class LevelEnd : MonoBehaviour
         if(questionsAnswered == 3)
         {
             light.SetActive(true);
+            GetComponent<CapsuleCollider2D>().enabled = true;
             questionsAnswered = 0;
         }
     }
@@ -56,13 +58,8 @@ public class LevelEnd : MonoBehaviour
         if(collision.gameObject.name == "Player")
         {
             levelMenuController.UnlockLevel(SceneManager.GetActiveScene().buildIndex);
-            if (SceneManager.GetActiveScene().buildIndex == 3)
-                SceneManager.LoadScene(0);
-            else
-            {
-                fadeLevel.Fade();
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
+            fadeLevel.Fade();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

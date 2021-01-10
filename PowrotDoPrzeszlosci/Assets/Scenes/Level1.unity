@@ -3280,6 +3280,8 @@ MonoBehaviour:
     - Samouczek. Podstawy
     - Samouczek. Platformy
     - Samouczek. Pytania
+    - Samouczek. Przeciwnicy
+    - "Samouczek. \u017Bycia"
     text:
     - "Cofn\u0105\u0142e\u015B si\u0119 w czasie. \u017Beby wr\xF3ci\u0107 do domu
       musisz przej\u015B\u0107 wszystkie poziomy i odpowiedzie\u0107 na wszystkie
@@ -3292,6 +3294,10 @@ MonoBehaviour:
     - "\u017Beby odpowiedzie\u0107 na pytanie, nale\u017Cy stan\u0105\u0107 na tablicy
       oznaczonej liter\u0105 \"Q\" i nacisn\u0105\u0107 przycisk w prawym dolnym
       rogu oznaczony liter\u0105 \"A\"."
+    - "\u017Beby pokona\u0107 przeciwnika, nale\u017Cy wskoczy\u0107 mu na g\u0142ow\u0119.\nGdy
+      przeciwnik Ciebie dotknie to zadaje Tobie obra\u017Cenia..."
+    - "Ka\u017Cde obra\u017Cenie zabiera Tobie jedno \u017Cycie.\nGdy stracisz wszyskie
+      \u017Cycia to zaczynasz poziom od pocz\u0105tku."
 --- !u!114 &767716932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3766,7 +3772,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921024055}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.63, y: -3.028, z: 0}
+  m_LocalPosition: {x: 1.64, y: -0.15, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 2137718033}
@@ -3895,7 +3901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942530477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.697, y: 1.163, z: 0}
+  m_LocalPosition: {x: 24.86, y: 2.48, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 2137718033}
@@ -4439,7 +4445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132978205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.633, y: -0.112, z: 0}
+  m_LocalPosition: {x: 11.12, y: 0.54, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 2137718033}
@@ -4750,7 +4756,37 @@ Tilemap:
   m_GameObject: {fileID: 1346375154}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: 25, y: -19, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 56, y: -16, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 2, y: -14, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 35, y: -11, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -4770,16 +4806,56 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 47, y: -8, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 74, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 2, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 23, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 2
+  - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: bb631994117cc134a9b4a1014c52c8b4, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 2
+  - m_RefCount: 9
     m_Data: {fileID: 3379296923186758423, guid: db3f80dc2fec5a54e9d4cf709da85af6,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 2
+  - m_RefCount: 9
     m_Data:
       e00: 1
       e01: 0
@@ -4798,13 +4874,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 2
+  - m_RefCount: 9
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -5, y: -21, z: 0}
-  m_Size: {x: 18, y: 21, z: 1}
+  m_Size: {x: 80, y: 26, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:

@@ -67,6 +67,28 @@ public class EnableQuestionsData : MonoBehaviour
     }
 
     /// <summary>
+    /// Gets the n o points.
+    /// </summary>
+    /// <returns>An int.</returns>
+    public int GetNOPoints()
+    {
+        int points = 0;
+
+        foreach (Question i in questionsStructure.Questions)
+        {
+            if (i.playerAnswer != "none")
+            {
+                if (i.playerAnswer == i.correctAnswer)
+                {
+                    points += 1;
+                }
+            }
+        }
+
+        return points;
+    }
+
+    /// <summary>
     /// Activates the buttons.
     /// </summary>
     /// <param name="gameObject">The button game object.</param>

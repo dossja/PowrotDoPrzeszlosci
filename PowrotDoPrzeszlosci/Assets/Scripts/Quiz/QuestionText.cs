@@ -25,5 +25,11 @@ public class QuestionText : MonoBehaviour
             questionText.text = "W którym roku odbyła się bitwa pod Płowcami?";
         else if (id == 5)
             questionText.text = "W którym roku odbyła się bitwa pod Grunwaldem?";
+        else if (id == 6)
+            questionText.text = "W którym roku uchwalono Konstytucję 3 maja?";
+        else if (id == 7)
+            questionText.text = "W którym roku wybuchła I Wojna Światowa?";
+        else if (id == 8)
+            questionText.text = "W którym roku Karol Wojtyła został wybrany papieżem?";
     }
 }

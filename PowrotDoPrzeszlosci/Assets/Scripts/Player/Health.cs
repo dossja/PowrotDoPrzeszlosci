@@ -73,12 +73,4 @@ public class Health : MonoBehaviour
         audioSource.Play();
         playerDissolve.PlayerDead();
     }
-/*
-    /// <summary>
-    /// Plays playerHurt dissolve animation.
-    /// </summary>
-    private void PlayerHurt()
-    {
-        playerDissolve.PlayerHurt();
-    }*/
 }

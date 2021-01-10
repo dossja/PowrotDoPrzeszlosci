@@ -27,6 +27,8 @@ public class PlotScene : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         animator.SetTrigger("StopPlot");
+        if(SceneManager.GetActiveScene().buildIndex == 5)
+            SceneManager.LoadScene(0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
