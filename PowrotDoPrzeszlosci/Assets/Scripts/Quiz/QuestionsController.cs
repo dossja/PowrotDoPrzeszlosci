@@ -1,26 +1,37 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using System.Globalization;
 
+/// <summary>
+/// Question controller that loads and saves data from JSON file.
+/// </summary>
 public class QuestionsController : MonoBehaviour
 {
     QuestionsStructure questionsStructure;
     public string url;
     string filePath;
 
+    /// <summary>
+    /// Opens file at awake
+    /// </summary>
     void Awake()
     {
         filePath = Path.Combine(Application.persistentDataPath, "data.json");
         GetDataFileJson();
     }
 
+    /// <summary>
+    /// Returns question data.
+    /// </summary>
+    /// <returns>A QuestionsStructure.</returns>
     public QuestionsStructure GetData()
     {
         return questionsStructure;
     }
 
+    /// <summary>
+    /// Gets the data file json.
+    /// </summary>
     private void GetDataFileJson()
     {
         if(File.Exists(filePath))
@@ -29,26 +40,37 @@ public class QuestionsController : MonoBehaviour
         }
         else
         {
-            StartCoroutine(getJsonData());
+            StartCoroutine(GetJsonData());
         }
     }
 
+    /// <summary>
+    /// Reads the data file.
+    /// </summary>
     private void ReadDataFile()
     {
         using (StreamReader reader = new StreamReader(filePath))
         {
             string json = reader.ReadToEnd();
 
-            processJsonData(json);
+            ProcessJsonData(json);
         }
     }
 
-    private void processJsonData(string data)
+    /// <summary>
+    /// Processes the json data.
+    /// </summary>
+    /// <param name="data">The data.</param>
+    private void ProcessJsonData(string data)
     {
         questionsStructure = JsonUtility.FromJson<QuestionsStructure>(data);
     }
 
-    IEnumerator getJsonData()
+    /// <summary>
+    /// Gets the json data from GitHub.
+    /// </summary>
+    /// <returns>An IEnumerator.</returns>
+    IEnumerator GetJsonData()
     {
         WWW _www = new WWW(url);
 
@@ -57,12 +79,16 @@ public class QuestionsController : MonoBehaviour
         if (_www.error == null)
         {
             SaveDataJson(_www.text);
-            processJsonData(_www.text);
+            ProcessJsonData(_www.text);
         }
         else
             Debug.LogError("Error in getJsonData");
     }
 
+    /// <summary>
+    /// Saves the data.
+    /// </summary>
+    /// <param name="data">The data.</param>
     public void SaveData(QuestionsStructure data)
     {
         string dataToSave = JsonUtility.ToJson(data);
@@ -70,11 +96,18 @@ public class QuestionsController : MonoBehaviour
         SaveDataJson(dataToSave);
     }
 
+    /// <summary>
+    /// Saves the data json.
+    /// </summary>
+    /// <param name="dataToSave">The data to save.</param>
     private void SaveDataJson(string dataToSave)
     {
         File.WriteAllText(filePath, dataToSave);
     }
 
+    /// <summary>
+    /// Deletes all of the answers (Clears history).
+    /// </summary>
     public void DeleteAnswers()
     {
         foreach(Question i in questionsStructure.Questions)

@@ -4,6 +4,9 @@ using UnityEngine;
 using System.IO;
 using System;
 
+/// <summary>
+/// Question data connects the data with UI elements.
+/// </summary>
 [Serializable]
 public class QuestionData: MonoBehaviour
 {
@@ -35,12 +38,19 @@ public class QuestionData: MonoBehaviour
     private bool buttonsDisabled = false;
     private int wait = 0;
 
+    /// <summary>
+    /// Data setup at start
+    /// </summary>
     private void Start()
     {
         questionsStructure = questionsController.GetData();
         SetupQuestion(questionId);
     }
 
+    /// <summary>
+    /// Setups the question.
+    /// </summary>
+    /// <param name="id">The id of the question.</param>
     public void SetupQuestion(int id)
     {
         foreach (Question i in questionsStructure.Questions)
@@ -57,6 +67,10 @@ public class QuestionData: MonoBehaviour
         question.Setup(id);
     }
 
+    /// <summary>
+    /// Inputs player answer into data and saves it.
+    /// </summary>
+    /// <param name="answer">The answer.</param>
     public void PlayerAnswered(string answer)
     {
         questionData.playerAnswer = answer;
@@ -65,6 +79,9 @@ public class QuestionData: MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Disables the buttons after answering.
+    /// </summary>
     public void DisableButtons()
     {
         answer1.DisableButton();
@@ -75,6 +92,9 @@ public class QuestionData: MonoBehaviour
         buttonsDisabled = true;
     }
 
+    /// <summary>
+    /// Iterates in order to wait few seconds before showing "Kontynuuj" button
+    /// </summary>
     public void Update()
     {
         if(buttonsDisabled)

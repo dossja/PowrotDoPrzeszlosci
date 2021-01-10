@@ -2,20 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// The any state animator.
+/// </summary>
 public class AnyStateAnimator : MonoBehaviour
 {
     private Animator animator;
 
     private Dictionary<string, AnyStateAnimation> animations = new Dictionary<string, AnyStateAnimation>();
 
-    private string currentAnimationLegs = string.Empty;
     private string currentAnimationBody = string.Empty;
 
+    /// <summary>
+    /// Sets animator on Awake
+    /// </summary>
     private void Awake()
     {
-        this.animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
+    /// <summary>
+    /// Adds the animations into dictionary.
+    /// </summary>
+    /// <param name="newAnimations">The new animations.</param>
     public void AddAnimations(params AnyStateAnimation[] newAnimations)
     {
         for (int i = 0; i < newAnimations.Length; i++)
@@ -24,6 +33,10 @@ public class AnyStateAnimator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Tries to play animation.
+    /// </summary>
+    /// <param name="newAnimation">The new animation to play.</param>
     public void TryPlayAnimation(string newAnimation)
     {
         switch (animations[newAnimation].AnimationRig)
@@ -51,6 +64,9 @@ public class AnyStateAnimator : MonoBehaviour
         Animate();
     }
 
+    /// <summary>
+    /// Animates the animation.
+    /// </summary>
     private void Animate()
     {
         foreach(string key in animations.Keys)

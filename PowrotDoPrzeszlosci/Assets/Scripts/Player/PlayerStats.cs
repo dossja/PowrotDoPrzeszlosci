@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class for player statisticks
+/// </summary>
 [System.Serializable]
 public class PlayerStats
 {

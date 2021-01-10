@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class for managing if player can go down the platform.
+/// </summary>
 public class PlayerPlatformDown : MonoBehaviour
 {
     private PlatformEffector2D platformEffector;
@@ -10,12 +13,18 @@ public class PlayerPlatformDown : MonoBehaviour
 
     private bool crouch;
 
+    /// <summary>
+    /// Set ups at the start.
+    /// </summary>
     void Start()
     {
         platformEffector = GetComponent<PlatformEffector2D>();
         waitingTime = 0.8f;
     }
 
+    /// <summary>
+    /// Let's the player fall from platform if player is crouching and waited enough time.
+    /// </summary>
     private void Update()
     {
         if (crouch)
@@ -36,6 +45,9 @@ public class PlayerPlatformDown : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Changes crouch into true if player wants to go down the platform.
+    /// </summary>
     public void GoingDown()
     {
         crouch = true;

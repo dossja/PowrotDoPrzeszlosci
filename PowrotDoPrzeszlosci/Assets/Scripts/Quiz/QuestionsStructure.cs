@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+/// <summary>
+/// Structure for list of questions.
+/// </summary>
 [Serializable]
 public class QuestionsStructure
 {
     public List<Question> Questions;
 }
 
+/// <summary>
+/// Question structure according to JSON input.
+/// </summary>
 [Serializable]
 public class Question
 {

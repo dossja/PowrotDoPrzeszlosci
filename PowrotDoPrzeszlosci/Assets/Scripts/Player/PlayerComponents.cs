@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Player components and level layers.
+/// </summary>
 [System.Serializable]
 public class PlayerComponents
 {

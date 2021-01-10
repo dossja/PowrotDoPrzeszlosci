@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Manager for tutorial text
+/// </summary>
 public class TutorialTextManager : MonoBehaviour
 {
     private Queue<string> titles;
@@ -13,16 +16,21 @@ public class TutorialTextManager : MonoBehaviour
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI textText;
 
+    /// <summary>
+    /// Creates new empty Queues for texts and titles
+    /// </summary>
     private void Start()
     {
         titles = new Queue<string>();
         texts = new Queue<string>();
     }
 
+    /// <summary>
+    /// Starts the tutorial (TutorialTextTrigger triggers it).
+    /// </summary>
+    /// <param name="tutorialText">The tutorial text.</param>
     public void StartTutorial(TutorialText tutorialText)
     {
-        Debug.Log("Started ");
-
         titles.Clear();
         texts.Clear();
 
@@ -39,6 +47,9 @@ public class TutorialTextManager : MonoBehaviour
         ShowNextTip();
     }
 
+    /// <summary>
+    /// Shows the next tip and hides tutorial when there is no more text in the Queue.
+    /// </summary>
     public void ShowNextTip()
     {
         if (titles.Count == 0 && texts.Count==0)
@@ -54,9 +65,11 @@ public class TutorialTextManager : MonoBehaviour
         textText.text = text;
     }
 
+    /// <summary>
+    /// Deactivates the tutorial box.
+    /// </summary>
     void HideTutorialBox()
     {
-        Debug.Log("END");
         tutorialBox.SetActive(false);
     }
 }

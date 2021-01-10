@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class for connecting all player scripts
+/// </summary>
 public class Player : MonoBehaviour
 {
     [SerializeField]
@@ -24,6 +27,9 @@ public class Player : MonoBehaviour
     public PlayerUtilities Utilities { get => utilities; }
 
     // Start is called before the first frame update
+    /// <summary>
+    /// Set ups classes constructors at start.
+    /// </summary>
     private void Start()
     {
         transform.localScale = new Vector3(-1, 1, 1);
@@ -44,17 +50,27 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
+    /// <summary>
+    /// Updates the utilites every frame
+    /// </summary>
     private void Update()
     {
         utilities.HandleInput();
         utilities.HandleAir();
     }
 
+    /// <summary>
+    /// Updates the move
+    /// </summary>
     private void FixedUpdate()
     { 
         actions.Move(transform);
     }
 
+    /// <summary>
+    /// Gets the joystick vertical.
+    /// </summary>
+    /// <returns>A float.</returns>
     public float GetJoystickVertical()
     {
         return joystick.Vertical;

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// JSON cannot work with polish letters. According to question ID, the correct question text is being taken.
+/// </summary>
 public class QuestionText : MonoBehaviour
 {
     [SerializeField]

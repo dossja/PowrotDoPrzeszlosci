@@ -1,7 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// TutorialText class, holdes place for titles and texts to input in Editor.
+/// </summary>
 [System.Serializable]
 public class TutorialText
 {

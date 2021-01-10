@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Class for Dissolve animation on player texture.
+/// </summary>
 public class PlayerDissolve : MonoBehaviour
 {
     private Material material;
@@ -12,12 +13,18 @@ public class PlayerDissolve : MonoBehaviour
     private float fadeValue = 1f;
 
     // Start is called before the first frame update
+    /// <summary>
+    /// Set ups material at the start.
+    /// </summary>
     void Start()
     {
         material = GetComponent<SpriteRenderer>().material;
     }
 
     // Update is called once per frame
+    /// <summary>
+    /// Updates the dissolve shader if player dies or is hurt.
+    /// </summary>
     void Update()
     {
         if(isDead)
@@ -52,16 +59,25 @@ public class PlayerDissolve : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets player state into dead, when he lost all hearts.
+    /// </summary>
     public void PlayerDead()
     {
         isDead = true;
     }
 
+    /// <summary>
+    /// Sets player state into hurt, when he is hitted by enemy.
+    /// </summary>
     public void PlayerHurt()
     {
         isHurt = true;
     }
 
+    /// <summary>
+    /// When player is reborn, the fade value is changed.
+    /// </summary>
     public void PlayerAlive()
     {
         fadeValue = 1f;

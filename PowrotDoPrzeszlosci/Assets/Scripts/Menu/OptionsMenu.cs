@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class for changing the volume in game in OptionsMenu
+/// </summary>
 public class OptionsMenu : MonoBehaviour
 {
     float value;
@@ -16,6 +19,9 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField]
     private Slider sliderSoundEffects;
 
+    /// <summary>
+    /// Set ups the game volume from PlayerPrefabs (in order to remember it between sessions).
+    /// </summary>
     public void Start()
     {
         value = PlayerPrefs.GetFloat("volume");
@@ -26,6 +32,10 @@ public class OptionsMenu : MonoBehaviour
         sliderSoundEffects.value = value;
     }
 
+    /// <summary>
+    /// Sets the master volume.
+    /// </summary>
+    /// <param name="volume">The volume.</param>
     public void SetVolumeMaster(float volume)
     {
         if (volume == 0)
@@ -43,6 +53,10 @@ public class OptionsMenu : MonoBehaviour
             sliderSoundEffects.value = volume;
     }
 
+    /// <summary>
+    /// Sets the music volume.
+    /// </summary>
+    /// <param name="volume">The volume.</param>
     public void SetVolumeMusic(float volume)
     {
         value = PlayerPrefs.GetFloat("volume");
@@ -56,6 +70,10 @@ public class OptionsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("musicVolume", value);
     }
 
+    /// <summary>
+    /// Sets the sound effects volume.
+    /// </summary>
+    /// <param name="volume">The volume.</param>
     public void SetVolumeSoundEffects(float volume)
     {
         value = PlayerPrefs.GetFloat("volume");

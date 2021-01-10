@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Class for AnswerButton in quiz
+/// </summary>
 public class AnswerButton : MonoBehaviour
 {
     [SerializeField]
@@ -17,12 +18,20 @@ public class AnswerButton : MonoBehaviour
 
     private string correctAnswer;
 
+    /// <summary>
+    /// Setups the buttons with answers.
+    /// </summary>
+    /// <param name="answer">The answer.</param>
+    /// <param name="correctAnswer">The correct answer.</param>
     public void Setup(string answer, string correctAnswer)
     {
         answerText.text = answer;
         this.correctAnswer = correctAnswer;
     }
 
+    /// <summary>
+    /// Checks the validity and changes button color into correct one.
+    /// </summary>
     public void CheckingValidity()
     {
         Image colorBlock = button.GetComponent<Image>();
@@ -39,6 +48,9 @@ public class AnswerButton : MonoBehaviour
         questionData.PlayerAnswered(answerText.text);
     }
 
+    /// <summary>
+    /// Disables the button.
+    /// </summary>
     public void DisableButton()
     {
         button.interactable = false;

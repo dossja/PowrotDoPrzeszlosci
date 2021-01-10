@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using System.IO;
 using TMPro;
 
+/// <summary>
+/// Class for managing the questions.
+/// </summary>
 public class EnableQuestionsData : MonoBehaviour
 {
     [SerializeField]
@@ -16,12 +19,19 @@ public class EnableQuestionsData : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI pointsText;
 
+    /// <summary>
+    /// Set ups questions at start.
+    /// </summary>
     private void Start()
     {
         questionsStructure = questionsController.GetData();
         SetupQuestionButtons();
     }
 
+
+    /// <summary>
+    /// Deletes answers after the button is pressed.
+    /// </summary>
     public void ReloadData()
     {
         questionsController.DeleteAnswers();
@@ -29,6 +39,9 @@ public class EnableQuestionsData : MonoBehaviour
         SetupQuestionButtons();
     }
 
+    /// <summary>
+    /// Setups the questions with its points.
+    /// </summary>
     public void SetupQuestionButtons()
     {
         int points = 0;
@@ -53,6 +66,11 @@ public class EnableQuestionsData : MonoBehaviour
         pointsText.text = points.ToString();
     }
 
+    /// <summary>
+    /// Activates the buttons.
+    /// </summary>
+    /// <param name="gameObject">The button game object.</param>
+    /// <param name="state">State if button should be enabled</param>
     private void Activate(GameObject gameObject, bool state)
     {
         ColorBlock colorBlock = gameObject.GetComponent<Button>().colors;

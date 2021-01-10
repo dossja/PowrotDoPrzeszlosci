@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// SceneQuizTrigger is script that is being put on Question boards in game. It triggers the questions.
+/// </summary>
 public class SceneQuizTrigger : MonoBehaviour
 {
     [SerializeField]
@@ -22,12 +25,19 @@ public class SceneQuizTrigger : MonoBehaviour
     private bool entered;
     private GameObject board;
 
+    /// <summary>
+    /// Set up on start
+    /// </summary>
     void Start()
     {
         board = this.gameObject;
         entered = false;
     }
 
+    /// <summary>
+    /// When player enters, then the question can be triggered.
+    /// </summary>
+    /// <param name="collision">The collision information.</param>
     private void OnTriggerStay2D(Collider2D collision)
     { 
         if (collision.gameObject.name == "Player")
@@ -36,6 +46,10 @@ public class SceneQuizTrigger : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When player exits, then the question no longer can be triggered.
+    /// </summary>
+    /// <param name="collision">The collision information.</param>
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.name == "Player")
@@ -44,6 +58,10 @@ public class SceneQuizTrigger : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When the Action button is pressed, and question can be triggered.
+    /// Then the UI is changed into question UI and board is removed.
+    /// </summary>
     public void ButtonPressed()
     {
         if(entered)
@@ -53,7 +71,7 @@ public class SceneQuizTrigger : MonoBehaviour
             joystickUI.SetActive(false);
             questionMenu.SetActive(true);
             button.gameObject.SetActive(false);
-            levelEnd.questionAnswered();
+            levelEnd.QuestionAnswered();
             Time.timeScale = 0.0f;
 
             Destroy(board);

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Class for checking the conditions for level end.
+/// </summary>
 public class LevelEnd : MonoBehaviour
 {
     private int questionsAnswered;
@@ -15,17 +18,26 @@ public class LevelEnd : MonoBehaviour
     [SerializeField]
     private FadeLevel fadeLevel;
 
+    /// <summary>
+    /// Set up no of questionsAnswered at the start.
+    /// </summary>
     void Start()
     {
         questionsAnswered = 0;
     }
 
-    public void questionAnswered()
+    /// <summary>
+    /// Increments the no of questions answered
+    /// </summary>
+    public void QuestionAnswered()
     {
         questionsAnswered += 1;
     }
 
 
+    /// <summary>
+    /// When 3 questions are answered, the door light (doors to go to the next level) is being activated.
+    /// </summary>
     void Update()
     {
         if(questionsAnswered == 3)
@@ -35,6 +47,10 @@ public class LevelEnd : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When player collides with the door, the level is being changes
+    /// </summary>
+    /// <param name="collision">The collision information.</param>
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.name == "Player")

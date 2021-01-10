@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class for managing player health
+/// </summary>
 public class Health : MonoBehaviour
 {
     [SerializeField]
@@ -13,13 +16,21 @@ public class Health : MonoBehaviour
     [SerializeField]
     private Sprite fullHeart;
     private PlayerDissolve playerDissolve;
+    private AudioSource audioSource;
 
+    /// <summary>
+    /// Set ups player health and dissolve class at the start.
+    /// </summary>
     private void Start()
     {
         playerDissolve = GetComponentInChildren<PlayerDissolve>();
+        audioSource = GetComponent<AudioSource>();
         health = 3;
     }
 
+    /// <summary>
+    /// Updates the health.
+    /// </summary>
     void Update()
     {
         if (health > 3)
@@ -41,20 +52,33 @@ public class Health : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Removes the heart when attackted by enemy (enemy invoces this).
+    /// </summary>
     public void RemoveHeart()
     {
         health -= 1;
         if (health > 0)
+        {
+            audioSource.Play();
             playerDissolve.PlayerHurt();
+        }
     }
 
+    /// <summary>
+    /// Plays playerDeath dissolve method with level restart.
+    /// </summary>
     private void PlayerDeath()
     {
+        audioSource.Play();
         playerDissolve.PlayerDead();
     }
-
+/*
+    /// <summary>
+    /// Plays playerHurt dissolve animation.
+    /// </summary>
     private void PlayerHurt()
     {
         playerDissolve.PlayerHurt();
-    }
+    }*/
 }

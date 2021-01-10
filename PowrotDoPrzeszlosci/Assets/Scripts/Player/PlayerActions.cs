@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Dynamic;
-using UnityEngine;
-using UnityEngine.Tilemaps;
+﻿using UnityEngine;
 
+/// <summary>
+/// Class for player actions that enables particleSystem and different classes.
+/// </summary>
 public class PlayerActions
 {
     private Player player;
@@ -14,6 +13,12 @@ public class PlayerActions
 
     private PlayerPlatformDown playerPlatform;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PlayerActions"/> class.
+    /// </summary>
+    /// <param name="player">The player.</param>
+    /// <param name="particle">The particle.</param>
+    /// <param name="playerPlatform">The player platform.</param>
     public PlayerActions(Player player, ParticleSystem particle, PlayerPlatformDown playerPlatform)
     {
         this.player = player;
@@ -22,6 +27,10 @@ public class PlayerActions
         goingRight = true;
     }
 
+    /// <summary>
+    /// Initialies the particles for move and chooses animations.
+    /// </summary>
+    /// <param name="transform">The transform.</param>
     public void Move(Transform transform)
     {
         player.Components.Rigidbody.velocity = new Vector2(player.Stats.Direction.x * player.Stats.Speed * Time.deltaTime, player.Components.Rigidbody.velocity.y);
@@ -49,6 +58,9 @@ public class PlayerActions
         }
     }
 
+    /// <summary>
+    /// Jumps player and plays the animation.
+    /// </summary>
     public void Jump()
     {
         if (player.Utilities.IsGrounded())
@@ -59,6 +71,9 @@ public class PlayerActions
         }
     }
 
+    /// <summary>
+    /// Crouches player and plays the animation.
+    /// </summary>
     public void Crouch()
     {
         if(player.Utilities.IsOnTile())
@@ -68,6 +83,9 @@ public class PlayerActions
         }
     }
 
+    /// <summary>
+    /// Creates the particle.
+    /// </summary>
     private void CreateParticle()
     {
         particle.Play();

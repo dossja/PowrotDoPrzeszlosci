@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.IO;
+﻿using UnityEngine;
 
+/// <summary>
+/// Class for sending questions data into correct fields in AchievementMenu.
+/// </summary>
 public class AchievementsQuestion : MonoBehaviour
 {
     [SerializeField]
@@ -18,11 +18,18 @@ public class AchievementsQuestion : MonoBehaviour
     [SerializeField]
     private AnswerText answerCorrect;
 
+    /// <summary>
+    /// Gets question data at start
+    /// </summary>
     private void Start()
     {
         questionsStructure = questionsController.GetData();
     }
 
+    /// <summary>
+    /// Setups the question parts with this id into correct places in menu.
+    /// </summary>
+    /// <param name="id">The id.</param>
     public void SetupQuestion(int id)
     {
         foreach (Question i in questionsStructure.Questions)
@@ -31,7 +38,6 @@ public class AchievementsQuestion : MonoBehaviour
                 questionData = i;
         }
         
-
         question.Setup(id);
         answerPlayer.Setup(questionData.playerAnswer);
         answerCorrect.Setup(questionData.correctAnswer);
